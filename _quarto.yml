@@ -10,7 +10,7 @@ author-meta: "Dr. Gang He"
 
 website:
   title: "Quarto Academic"
-  image: "https://quarto.org/quarto.png"
+  image: "docs/files/images/quarto.png"
   description: "Quarto Academic Website Template adapted by Dr. Gang He"
  
   navbar:

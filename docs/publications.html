@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Dr.&nbsp;Gang He">
-<meta name="description" content="Personal Academic Website for Jacob Johnson">
+<meta name="description" content="Information, pdfs, and social metrics of papers">
 
-<title>Jacob Johnson – Quarto Academic</title>
+<title>Publications – Quarto Academic</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -35,12 +35,11 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
@@ -48,8 +47,6 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/bootstrap/bootstrap-31eaf266902e15e6572a3934ae2616ee.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/academicons-1.9.2/all.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/academicons-1.9.2/size.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -76,36 +73,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-recent-posts .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-image','listing-date','listing-title','listing-subtitle',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      page: 3,
-    pagination: { item: "<li class='page-item'><a class='page page-link' href='#'></a></li>" },
-      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-recent-posts'] = new List('listing-recent-posts', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id="></script>
 
 <script type="text/javascript">
@@ -136,44 +103,16 @@ https://badge.dimensions.ai/
 
 <script type="text/javascript" src="//cdn.plu.mx/widget-popup.js"></script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="styles.css">
-<meta property="og:title" content="Jacob Johnson – Quarto Academic">
+<link rel="stylesheet" href="custom.css">
+<meta property="og:title" content="Publications – Quarto Academic">
 <meta property="og:description" content="Quarto Academic Website Template adapted by Dr.&nbsp;Gang He">
-<meta property="og:image" content="https://drganghe.github.io/quarto-academic-website-template/files/images/JacobJohnson.JPG">
+<meta property="og:image" content="https://drganghe.github.io/quarto-academic-website-template/docs/files/images/quarto.png">
 <meta property="og:site_name" content="Quarto Academic">
-<meta name="twitter:title" content="Jacob Johnson – Quarto Academic">
+<meta name="twitter:title" content="Publications – Quarto Academic">
 <meta name="twitter:description" content="Quarto Academic Website Template adapted by Dr.&nbsp;Gang He">
-<meta name="twitter:image" content="https://drganghe.github.io/quarto-academic-website-template/files/images/JacobJohnson.JPG">
+<meta name="twitter:image" content="https://drganghe.github.io/quarto-academic-website-template/docs/files/images/quarto.png">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -288,138 +227,84 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#selected-work" id="toc-selected-work" class="nav-link active" data-scroll-target="#selected-work">Selected Work</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<main class="content column-page" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
-
-
-
-<div class="quarto-about-trestles column-page">
-  <div class="about-entity">
-    <img src="files/images/JacobJohnson.JPG" class="about-image
-  rounded " style="width: 70%;">
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Jacob Johnson</h1>
+<h1 class="title">Publications</h1>
 </div>
-<div class="quarto-title-meta column-page">
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
   </div>
+  
+
+
 </header>
-    <div class="about-links">
-  <a href="https://scholar.google.com/citations?user=dbN-_3QAAAAJ&amp;hl=en" class="about-link" rel="" target="_blank">
-     <span class="about-link-text"><i class="ai  ai-google-scholar"></i> Google Scholar</span>
-  </a>
-  <a href="mailto:jajohnsonstats@gmail.com" class="about-link" rel="" target="">
-    <i class="bi bi-envelope"></i>
-     <span class="about-link-text">E-mail</span>
-  </a>
-  <a href="https://github.com/jajohnsonstats" class="about-link" rel="" target="_blank">
-    <i class="bi bi-github"></i>
-     <span class="about-link-text">GitHub</span>
-  </a>
-  <a href="https://www.linkedin.com/in/jacob-johnson-179391251/" class="about-link" rel="" target="_blank">
-    <i class="bi bi-linkedin"></i>
-     <span class="about-link-text">LinkedIn</span>
-  </a>
-  <a href="https://orcid.org/0009-0002-3797-0812" class="about-link" rel="" target="_blank">
-     <span class="about-link-text"><i class="ai  ai-orcid"></i> ORCID</span>
-  </a>
-  <a href="https://sites.google.com/view/katzfuss/group" class="about-link" rel="" target="_blank">
-    <i class="bi bi-sun"></i>
-     <span class="about-link-text">Katzfuss Group</span>
-  </a>
-</div>
-  </div>
-  <div class="about-contents"><div id="hero-heading">
-<p>I’m a second year PhD student at the <a href="https://stat.wisc.edu/">University of Wisconsin – Madison</a>. My research is focused on finding new methods in Bayesian Machine Learning, Spatial Statistics, Gaussian Processes, and Uncertainty Quantification, specifically with applications in climate and environmental science.</p>
-<p>Check <a href="https://github.com/drganghe/quarto-academic-website-template/blob/main/README.md">README.md</a> for more detailed instructions.</p>
-<section id="experience" class="level2">
-<h2 data-anchor-id="experience">Experience</h2>
+
+
+<!--Include academic icons or buttons-->
+<!-- 
+Load Academicons v1: https://jpswalsh.github.io/academicons/
+-->
+<p><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"></p>
+<p><link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"></p>
+<!---
+The following code are needed to show dimension citation and altmetrics.
+https://api.altmetric.com/embeds.html
+https://badge.dimensions.ai/
+--->
+<script type="text/javascript" src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script>
+<script async="" src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script>
+<script type="text/javascript" src="//cdn.plu.mx/widget-popup.js"></script>
+<p>Notes: * corresponding author; <sup>GS</sup> graduate student advisee; <sup>VS</sup> visiting scholar; <img src="https://drganghe.github.io/files/images/highly-cited-paper-badge.png" title="ESI Highly Cited Paper" class="img-fluid" alt="Highly cited paper" width="20"> ESI <a href="https://webofscience.help.clarivate.com/en-us/Content/esi-highly-cited-papers.html">Highly Cited Paper</a> (top 1%); <img src="https://drganghe.github.io/files/images/hot-paper-badge.png" title="ESI Hot Paper" class="img-fluid" alt="Hot paper" width="20"> ESI <a href="https://webofscience.help.clarivate.com/en-us/Content/esi-hot-papers.html">Hot Paper</a> (top 0.1%)</p>
+<p>Total citations as of January 2025:</p>
 <ul>
-<li>Researcher, Univerisity</li>
+<li><a href="https://www.webofscience.com">Web of Science</a>: 100,000 (h-index = 100)<br>
+</li>
+<li><a href="https://scholar.google.com/citations?user=qc6CJjYAAAAJ&amp;hl=en">Google Scholar</a>: 179,000 (h-index = 127, i10-index = 377)</li>
 </ul>
-</section>
-<section id="education" class="level2">
-<h2 data-anchor-id="education">Education</h2>
-<ul>
-<li>PhD, Univerisity</li>
-</ul>
-</section>
-</div></div>
-</div>
+<section id="selected-work" class="level2">
+<h2 class="anchored" data-anchor-id="selected-work">Selected Work</h2>
+Einstein, A., Podolsky, B., &amp; Rosen, N. (1935). <a href="./posts/paper-title/index.html">Can quantum-mechanical description of physical reality be considered complete?</a>. <em>Physical review</em>, 47(10), 777. [<a href="https://scholar.google.com/">pdf</a>] [<a href="https://doi.org">code and data</a>] <img src="https://drganghe.github.io/files/images/highly-cited-paper-badge.png" title="ESI Highly Cited Paper" class="img-fluid" alt="Highly cited paper" width="20"> <img src="https://drganghe.github.io/files/images/hot-paper-badge.png" title="ESI Hot Paper" class="img-fluid" alt="Hot paper" width="20"> <span class="__dimensions_badge_embed__" data-doi="10.1103/PhysRev.47.777" data-style="large_rectangle"></span>
+<div class="altmetric-embed" data-badge-popover="right" data-badge-type="1" data-doi="10.1103/PhysRev.47.777" data-hide-no-mentions="true">
 
-<!-- Delete the following section and delete corresponding lines in the yaml part to remove the recent posts -->
-<section id="recent-posts" class="level2">
-<h2 data-anchor-id="recent-posts">Recent Posts</h2>
-<p>Check out the latest &nbsp;<a href="./posts.html#category=paper">Papers</a>&nbsp;, &nbsp;<a href="./posts.html#category=news">News</a>&nbsp;, &nbsp;<a href="./posts.html#category=event">Events</a>&nbsp;, and &nbsp;<a href="./posts.html">More »</a></p>
-<div id="listing-recent-posts" class="quarto-listing quarto-listing-container-grid">
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="bmV3cw==" data-listing-date-sort="1728968400000">
-<a href="https://drganghe.github.io/quarto-academic-site-examples.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./files/images/placeholder1.jpg" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Quarto Academic Website Examples and Tips
-</h5>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-Oct 15, 2024
 </div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="1" data-categories="ZXZlbnQlMkNwcmVzZW50YXRpb24=" data-listing-date-sort="1725339600000" data-listing-file-modified-sort="1778212832173" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="7">
-<a href="./posts/event-title/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./files/images/placeholder2.JPG" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Event item
-</h5>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-Sep 3, 2024
-</div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="2" data-categories="bmV3cw==" data-listing-date-sort="1719205200000" data-listing-file-modified-sort="1778212832182" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="9">
-<a href="./posts/news-title/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./files/images/placeholder3.JPG" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-News item
-</h5>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-Jun 24, 2024
-</div>
-</div>
-</div>
-</div></a>
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div>
-<p align="right">
-<a href="./posts.html">All Posts »</a>
-</p>
+<center>
+<hr style="width:50%">
+</center>
+Einstein, A. (1965). Concerning an heuristic point of view toward the emission and transformation of light. <em>American Journal of Physics</em>, 33(5), 367. [<a href="https://icg.isy.liu.se/en/phd-courses/quantum_foundations/references/Einstein1905b.pdf">pdf</a>] <span class="__dimensions_badge_embed__" data-doi="10.1038/s41560-023-01304-w" data-style="large_rectangle"></span>
+<div class="altmetric-embed" data-badge-popover="right" data-badge-type="1" data-doi="10.1038/s41560-023-01304-w" data-hide-no-mentions="true">
 
-
+</div>
+<!--Include social share buttons-->
+<!-- 
+AddToAny check more: https://www.addtoany.com/buttons/for/website 
+Using includes will make edits easier, will only need to add or remove button here if needed.
+https://quarto.org/docs/authoring/includes.html
+-->
+<div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+<p><a class="a2a_dd" href="https://www.addtoany.com/share"></a> <a class="a2a_button_linkedin"></a> <a class="a2a_button_bluesky"></a> <a class="a2a_button_facebook"></a> <a class="a2a_button_copy_link"></a> <a class="a2a_button_email"></a></p>
+</div>
+<script async="" src="https://static.addtoany.com/menu/page.js"></script>
 
 
 </section>
@@ -427,6 +312,13 @@ Jun 24, 2024
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
     const isCodeAnnotation = (el) => {
       for (const clz of el.classList) {
         if (clz.startsWith('code-annotation-')) {                     

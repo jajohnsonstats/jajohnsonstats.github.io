@@ -12,40 +12,27 @@ about:
   template: trestles
   image-width: 70%
   links:
-    - icon: sun
-      text: Lab
-      href: https://www.github.com
-      target: _blank
-    - icon: globe
-      text: Uprofile
-      href: https://baruch.cuny.edu
+    - text: "{{< ai google-scholar >}} Google Scholar"
+      href: https://scholar.google.com/citations?user=dbN-_3QAAAAJ&hl=en
       target: _blank
     - icon: envelope
       text: E-mail
-      href: mailto:email@gmail.com    
+      href: mailto:jajohnsonstats@gmail.com   
+    - icon: github
+      text: GitHub 
+      href: https://github.com/jajohnsonstats
+      target: _blank
     - icon: linkedin
       text: LinkedIn
-      href: https://linkedin.com
+      href: https://www.linkedin.com/in/jacob-johnson-179391251/
       target: _blank
-    - icon: youtube
-      text: YouTube
-      href: https://www.youtube.com     
-      target: _blank 
-    - text: "{{< ai orcid >}} ORCID"   # use academic icons, "" are needed, you also need to install the fontawesome extension
-      href: https://orcid.org
+    - text: "{{< ai orcid >}} ORCID"   
+      href: https://orcid.org/0009-0002-3797-0812
       target: _blank
-    - text: "{{< ai clarivate >}} Web of Science"
-      href: https://www.webofscience.com  
+    - icon: sun
+      text: Katzfuss Group
+      href: https://sites.google.com/view/katzfuss/group
       target: _blank
-    - text: "{{< ai scopus >}} Scopus"
-      href: https://www.scopus.com
-      target: _blank
-    - text: "{{< ai google-scholar >}} Google Scholar"
-      href: https://scholar.google.com
-      target: _blank
-#    - text: "{{< ai researchgate >}} Research Gate"
-#      href: https://www.researchgate.net
-#      target: _blank
 
 listing:   # Comment the listing section and delete corresponding lines in the index.qmd file to remove the recent posts
   - id: recent-posts
@@ -67,11 +54,9 @@ listing:   # Comment the listing section and delete corresponding lines in the i
 
 :::{#hero-heading}
 
-I'm a [Quarto Academeic Website Template](https://github.com/drganghe/quarto-academic-website-template) adapted by [Dr. Gang He](http://drganghe.github.io) used by Jacob Johnson.
+I'm a second year PhD student at the [University of Wisconsin – Madison](https://stat.wisc.edu/). My research is focused on finding new methods in Bayesian Machine Learning, Spatial Statistics, Gaussian Processes, and Uncertainty Quantification, specifically with applications in climate and environmental science.
 
-I'm a template that you can fork to build your own website with easy adaptation and deployment.
 
-I can automatically generate a neat publication list from an Excel file and enabling categories and filters.
 
 Check [README.md](https://github.com/drganghe/quarto-academic-website-template/blob/main/README.md) for more detailed instructions.
 

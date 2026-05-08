@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Dr.&nbsp;Gang He">
-<meta name="description" content="Personal Academic Website for Jacob Johnson">
+<meta name="description" content="Quarto Academic Website Template adapted by Dr.&nbsp;Gang He - Jacob Johnson">
 
-<title>Jacob Johnson – Quarto Academic</title>
+<title>Projects – Quarto Academic</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -41,6 +41,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
@@ -48,8 +49,6 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/bootstrap/bootstrap-31eaf266902e15e6572a3934ae2616ee.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/academicons-1.9.2/all.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/academicons-1.9.2/size.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -79,21 +78,20 @@ ul.task-list li input[type="checkbox"] {
 <script>
 
   window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-recent-posts .list');
+    const listingTargetEl = window.document.querySelector('#listing-projects .list');
     if (!listingTargetEl) {
       // No listing discovered, do not attach.
       return; 
     }
 
     const options = {
-      valueNames: ['listing-image','listing-date','listing-title','listing-subtitle',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      page: 3,
-    pagination: { item: "<li class='page-item'><a class='page page-link' href='#'></a></li>" },
-      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description"],
+      valueNames: ['listing-image','listing-title','listing-author','listing-subtitle','listing-description','listing-funding','listing-started','listing-ended',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-title-sort'] }],
+      
+      searchColumns: ["listing-image","listing-title","listing-author","listing-subtitle","listing-description","listing-started","listing-ended","listing-funding"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-recent-posts'] = new List('listing-recent-posts', options);
+    window['quarto-listings']['listing-projects'] = new List('listing-projects', options);
 
     if (window['quarto-listing-loaded']) {
       window['quarto-listing-loaded']();
@@ -167,13 +165,13 @@ window.Quarto = {
 </script>
 
 <link rel="stylesheet" href="styles.css">
-<meta property="og:title" content="Jacob Johnson – Quarto Academic">
-<meta property="og:description" content="Quarto Academic Website Template adapted by Dr.&nbsp;Gang He">
-<meta property="og:image" content="https://drganghe.github.io/quarto-academic-website-template/files/images/JacobJohnson.JPG">
+<meta property="og:title" content="Projects – Quarto Academic">
+<meta property="og:description" content="Funded projects">
+<meta property="og:image" content="https://nsf-gov-resources.nsf.gov/styles/featured_content_tablet/s3/2023-10/NSF_Official_logo_Med_Res_600ppi_rectangle.png">
 <meta property="og:site_name" content="Quarto Academic">
-<meta name="twitter:title" content="Jacob Johnson – Quarto Academic">
-<meta name="twitter:description" content="Quarto Academic Website Template adapted by Dr.&nbsp;Gang He">
-<meta name="twitter:image" content="https://drganghe.github.io/quarto-academic-website-template/files/images/JacobJohnson.JPG">
+<meta name="twitter:title" content="Projects – Quarto Academic">
+<meta name="twitter:description" content="Funded projects">
+<meta name="twitter:image" content="https://nsf-gov-resources.nsf.gov/styles/featured_content_tablet/s3/2023-10/NSF_Official_logo_Med_Res_600ppi_rectangle.png">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -291,142 +289,165 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
+    </div>
 <!-- main -->
 <main class="content column-page" id="quarto-document-content">
 
-
-
-
-<div class="quarto-about-trestles column-page">
-  <div class="about-entity">
-    <img src="files/images/JacobJohnson.JPG" class="about-image
-  rounded " style="width: 70%;">
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Jacob Johnson</h1>
-</div>
-<div class="quarto-title-meta column-page">
-  </div>
-</header>
-    <div class="about-links">
-  <a href="https://scholar.google.com/citations?user=dbN-_3QAAAAJ&amp;hl=en" class="about-link" rel="" target="_blank">
-     <span class="about-link-text"><i class="ai  ai-google-scholar"></i> Google Scholar</span>
-  </a>
-  <a href="mailto:jajohnsonstats@gmail.com" class="about-link" rel="" target="">
-    <i class="bi bi-envelope"></i>
-     <span class="about-link-text">E-mail</span>
-  </a>
-  <a href="https://github.com/jajohnsonstats" class="about-link" rel="" target="_blank">
-    <i class="bi bi-github"></i>
-     <span class="about-link-text">GitHub</span>
-  </a>
-  <a href="https://www.linkedin.com/in/jacob-johnson-179391251/" class="about-link" rel="" target="_blank">
-    <i class="bi bi-linkedin"></i>
-     <span class="about-link-text">LinkedIn</span>
-  </a>
-  <a href="https://orcid.org/0009-0002-3797-0812" class="about-link" rel="" target="_blank">
-     <span class="about-link-text"><i class="ai  ai-orcid"></i> ORCID</span>
-  </a>
-  <a href="https://sites.google.com/view/katzfuss/group" class="about-link" rel="" target="_blank">
-    <i class="bi bi-sun"></i>
-     <span class="about-link-text">Katzfuss Group</span>
-  </a>
-</div>
-  </div>
-  <div class="about-contents"><div id="hero-heading">
-<p>I’m a second year PhD student at the <a href="https://stat.wisc.edu/">University of Wisconsin – Madison</a>. My research is focused on finding new methods in Bayesian Machine Learning, Spatial Statistics, Gaussian Processes, and Uncertainty Quantification, specifically with applications in climate and environmental science.</p>
-<p>Check <a href="https://github.com/drganghe/quarto-academic-website-template/blob/main/README.md">README.md</a> for more detailed instructions.</p>
-<section id="experience" class="level2">
-<h2 data-anchor-id="experience">Experience</h2>
-<ul>
-<li>Researcher, Univerisity</li>
-</ul>
-</section>
-<section id="education" class="level2">
-<h2 data-anchor-id="education">Education</h2>
-<ul>
-<li>PhD, Univerisity</li>
-</ul>
-</section>
-</div></div>
+<h1 class="title">Projects</h1>
+<p class="subtitle lead">Funded projects</p>
 </div>
 
-<!-- Delete the following section and delete corresponding lines in the yaml part to remove the recent posts -->
-<section id="recent-posts" class="level2">
-<h2 data-anchor-id="recent-posts">Recent Posts</h2>
-<p>Check out the latest &nbsp;<a href="./posts.html#category=paper">Papers</a>&nbsp;, &nbsp;<a href="./posts.html#category=news">News</a>&nbsp;, &nbsp;<a href="./posts.html#category=event">Events</a>&nbsp;, and &nbsp;<a href="./posts.html">More »</a></p>
-<div id="listing-recent-posts" class="quarto-listing quarto-listing-container-grid">
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="bmV3cw==" data-listing-date-sort="1728968400000">
-<a href="https://drganghe.github.io/quarto-academic-site-examples.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./files/images/placeholder1.jpg" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Quarto Academic Website Examples and Tips
-</h5>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-Oct 15, 2024
+
+
+<div class="quarto-title-meta column-page">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div id="listing-projects" class="quarto-listing quarto-listing-container-table">
+<div class="listing-actions-group">
+   <div class="input-group input-group-sm quarto-listing-sort">
+    <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
+    <select id="listing-projects-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-projects'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
+      <option value="" disabled="" selected="" hidden="">Order By</option>
+      <option value="index" data-direction="asc">Default</option>
+      <option value="listing-image" data-direction="asc">
+      </option>
+      <option value="listing-title-sort" data-direction="asc">
+        Title
+      </option>
+      <option value="listing-author" data-direction="asc">
+        Team
+      </option>
+      <option value="listing-subtitle" data-direction="asc">
+        Funder
+      </option>
+      <option value="listing-description" data-direction="asc">
+        Description
+      </option>
+      <option value="listing-started" data-direction="asc">
+        Start
+      </option>
+      <option value="listing-ended" data-direction="asc">
+        End
+      </option>
+      <option value="listing-funding" data-direction="asc">
+        Funding
+      </option>
+    </select>
+  </div>
+    <div class="input-group input-group-sm quarto-listing-filter">
+      <span class="input-group-text"><i class="bi bi-search"></i></span>
+      <input type="text" class="search form-control" placeholder="Filter">
+    </div>
 </div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="1" data-categories="ZXZlbnQlMkNwcmVzZW50YXRpb24=" data-listing-date-sort="1725339600000" data-listing-file-modified-sort="1778212832173" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="7">
-<a href="./posts/event-title/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./files/images/placeholder2.JPG" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Event item
-</h5>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-Sep 3, 2024
-</div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="2" data-categories="bmV3cw==" data-listing-date-sort="1719205200000" data-listing-file-modified-sort="1778212832182" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="9">
-<a href="./posts/news-title/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./files/images/placeholder3.JPG" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-News item
-</h5>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-Jun 24, 2024
-</div>
-</div>
-</div>
-</div></a>
-</div>
-</div>
+<table class="quarto-listing-table table">
+<thead>
+<tr>
+
+<th>
+<a class="sort" data-sort="listing-image" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;"> </a>
+</th>
+
+<th>
+<a class="sort" data-sort="listing-title-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Title</a>
+</th>
+
+<th>
+<a class="sort" data-sort="listing-author" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Team</a>
+</th>
+
+<th>
+<a class="sort" data-sort="listing-subtitle" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Funder</a>
+</th>
+
+<th>
+<a class="sort" data-sort="listing-description" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Description</a>
+</th>
+
+<th>
+<a class="sort" data-sort="listing-funding" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Funding</a>
+</th>
+
+<th>
+<a class="sort" data-sort="listing-started" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Start</a>
+</th>
+
+<th>
+<a class="sort" data-sort="listing-ended" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">End</a>
+</th>
+
+</tr>
+</thead>
+<tbody class="list">
+
+<tr data-index="0" data-listing-title-sort="Exploring ">
+<td>
+<span class="listing-image"><img loading="lazy" src="https://nsf-gov-resources.nsf.gov/styles/featured_content_tablet/s3/2023-10/NSF_Official_logo_Med_Res_600ppi_rectangle.png" style="height: 30px;"></span>
+</td>
+<td>
+<a href="https://www.nsf.gov/" class="title listing-title">Exploring </a>
+</td>
+<td>
+<span class="listing-author">Academic Website</span>
+</td>
+<td>
+<span class="listing-subtitle">Funder</span>
+</td>
+<td>
+<span class="listing-description">The goal of this project is to investigate .</span>
+</td>
+<td>
+<span class="listing-funding">$0</span>
+</td>
+<td>
+<span class="listing-started">2024</span>
+</td>
+<td>
+<span class="listing-ended">2025</span>
+</td>
+
+</tr>
+
+</tbody>
+</table>
 <div class="listing-no-matching d-none">No matching items</div>
 </div>
-<p align="right">
-<a href="./posts.html">All Posts »</a>
-</p>
+<!--Include social share buttons-->
+<!-- 
+AddToAny check more: https://www.addtoany.com/buttons/for/website 
+Using includes will make edits easier, will only need to add or remove button here if needed.
+https://quarto.org/docs/authoring/includes.html
+-->
+<div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+<p><a class="a2a_dd" href="https://www.addtoany.com/share"></a> <a class="a2a_button_linkedin"></a> <a class="a2a_button_bluesky"></a> <a class="a2a_button_facebook"></a> <a class="a2a_button_copy_link"></a> <a class="a2a_button_email"></a></p>
+</div>
+<script async="" src="https://static.addtoany.com/menu/page.js"></script>
 
 
 
-
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
     const isCodeAnnotation = (el) => {
       for (const clz of el.classList) {
         if (clz.startsWith('code-annotation-')) {                     

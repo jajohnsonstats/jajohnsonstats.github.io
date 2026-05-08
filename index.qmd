@@ -1,10 +1,10 @@
 ---
-title: "Quarto Academic, PhD"
-description-meta: "Quarto Academic Website Template adapted by Dr. Gang He"
-image: "files/images/placeholder4.JPG"
+title: "Jacob Johnson"
+description-meta: "Personal Academic Website for Jacob Johnson"
+image: "files/images/JacobJohnson.JPG"
 page-navigation: false
 toc: false
-#sidebar: false
+sidebar: true
 page-layout: full
 
 about:

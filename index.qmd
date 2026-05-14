@@ -33,49 +33,13 @@ about:
       text: Katzfuss Group
       href: https://sites.google.com/view/katzfuss/group
       target: _blank
-
-listing:   # Comment the listing section and delete corresponding lines in the index.qmd file to remove the recent posts
-  - id: recent-posts
-    contents: 
-      - posts
-      - posts/post-links.yml
-    exclude:
-      title: ""
-    type: grid
-    max-items: 3
-#    image-height: 150px
-    page-size: 3 #set same as max-times to remove the page number setting
-    fields: [image, date, title, subtitle]
-    max-description-length: 75
-    sort: 
-      - "date desc"
-      - "title asc"
 ---
 
 :::{#hero-heading}
 
-I'm a second year PhD student at the [University of Wisconsin – Madison](https://stat.wisc.edu/). My research is focused on finding new methods in Bayesian Machine Learning, Spatial Statistics, Gaussian Processes, and Uncertainty Quantification, specifically with applications in climate and environmental science.
+I'm a second year PhD student at the [University of Wisconsin – Madison](https://stat.wisc.edu/) and year-round intern at [Sandia National Laboratories](https://www.sandia.gov/). My research is focused on finding new methods in Bayesian Machine Learning, Spatial Statistics, Gaussian Processes, and Uncertainty Quantification, specifically with applications in climate and environmental science.
 
+See here for my [CV](files/JacobJohnsonCV.pdf).
 
-
-Check [README.md](https://github.com/drganghe/quarto-academic-website-template/blob/main/README.md) for more detailed instructions.
-
-## Experience
-
-- Researcher, Univerisity
-
-## Education
-
-- PhD, Univerisity
 
 :::
-
-
-<!-- Delete the following section and delete corresponding lines in the yaml part to remove the recent posts -->
-## Recent Posts
-Check out the latest &nbsp;[Papers](posts.qmd#category=paper)&nbsp;, &nbsp;[News](posts.qmd#category=news)&nbsp;, &nbsp;[Events](posts.qmd#category=event)&nbsp;, and &nbsp;[More »](/posts.qmd)
-
-:::{#recent-posts}
-:::
-
-<p align="right">[All Posts »](/posts.qmd)</p>

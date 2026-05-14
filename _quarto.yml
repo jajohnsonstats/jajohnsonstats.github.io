@@ -5,13 +5,13 @@ project:
     - python xlsx_to_yml.py  # Automatically generate publications.yml from publications.xlsx
     
 # Meta
-description-meta: "Quarto Academic Website Template adapted by Dr. Gang He - Jacob Johnson"
-author-meta: "Dr. Gang He"
+description-meta: "Personal Academic Website for Jacob Johnson"
+author-meta: "Jacob Johnson"
 
 website:
-  title: "Quarto Academic"
-  image: "docs/files/images/quarto.png"
-  description: "Quarto Academic Website Template adapted by Dr. Gang He"
+  title: "Jacob Johnson"
+  image: "docs/files/images/JacobJohnson.JPG"
+  description: "Personal Academic Website for Jacob Johnson"
  
   navbar:
     background: light  # You can change the background color here
@@ -48,9 +48,9 @@ website:
 
     right: 
       - text: CV
-        href: files/nsf-biosketch.pdf
+        href: files/JacobJohnsonCV.pdf
       - icon: github
-        href: https://github.com/drganghe/quarto-academic-website-template
+        href: https://github.com/jajohnsonstats
         target: _blank
       - text: "{{< fa brands bluesky >}}"
         href: https://bsky.app
@@ -62,11 +62,11 @@ website:
   page-navigation: true
   
   page-footer: 
-    left: "[Your Name](http://www.github.com) &copy; <script>document.write(new Date().getFullYear())</script>" 
+    left: "[Jacob Johnson](http://www.github.com) &copy; <script>document.write(new Date().getFullYear())</script>" 
     center: "Build on [Quarto Academic Website Template](https://github.com/drganghe/quarto-academic-website-template) adapted by [Dr. Gang He](http://drganghe.github.io)"
     right:  
       - icon: github
-        href: https://github.com/drganghe/quarto-academic-website-template
+        href: https://github.com/jajohnsonstats
         target: _blank
       - text: "{{< fa brands bluesky >}}" 
         href: https://bsky.app

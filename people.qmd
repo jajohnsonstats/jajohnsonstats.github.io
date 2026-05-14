@@ -56,6 +56,7 @@ format:
 ---
 
 
+To be deleted. Also delete the people folder. 
 ## Team
 
 :::{#lab-member}

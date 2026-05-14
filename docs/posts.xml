@@ -5,13 +5,13 @@
       xmlns:dc="http://purl.org/dc/elements/1.1/" 
       version="2.0">
 <channel>
-<title>Quarto Academic</title>
+<title>Jacob Johnson</title>
 <link>https://drganghe.github.io/quarto-academic-website-template/posts.html</link>
 <atom:link href="https://drganghe.github.io/quarto-academic-website-template/posts.xml" rel="self" type="application/rss+xml"/>
-<description>Quarto Academic Website Template adapted by Dr. Gang He</description>
+<description>Personal Academic Website for Jacob Johnson</description>
 <image>
-<url>https://drganghe.github.io/quarto-academic-website-template/docs/files/images/quarto.png</url>
-<title>Quarto Academic</title>
+<url>https://drganghe.github.io/quarto-academic-website-template/docs/files/images/JacobJohnson.JPG</url>
+<title>Jacob Johnson</title>
 <link>https://drganghe.github.io/quarto-academic-website-template/posts.html</link>
 </image>
 <generator>quarto-1.9.36</generator>

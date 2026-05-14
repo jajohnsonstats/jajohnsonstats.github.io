@@ -3,3 +3,6 @@
 **/*.quarto_ipynb
 
 /.luarc.json
+*.Rproj
+.Rproj.user
+.positai

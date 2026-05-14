@@ -6,19 +6,14 @@ title-block-banner: false
 
 <center>
 
-**Quarto Academic**
+**Jacob Johnson**
 
-School
+University of Wisconsin–Madison  
+Department of Statistics  
+1205 University Avenue  
+Madison, WI 53706
 
-College
-
-University
-
-Address: 
-
-Phone: 
-
-E-mail: 
+Email: jajohnsonstats@gmail.com
 
 
 </center>

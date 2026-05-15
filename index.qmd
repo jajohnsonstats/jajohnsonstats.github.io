@@ -24,7 +24,7 @@ about:
       target: _blank
     - icon: linkedin
       text: LinkedIn
-      href: https://www.linkedin.com/in/jacob-johnson-179391251/
+      href: https://www.linkedin.com/in/jacob-johnson-179391251
       target: _blank
     - text: "{{< ai orcid >}} ORCID"   
       href: https://orcid.org/0009-0002-3797-0812
@@ -39,7 +39,7 @@ about:
 
 I'm a second year PhD student at the [University of Wisconsin – Madison](https://stat.wisc.edu/) and year-round intern at [Sandia National Laboratories](https://www.sandia.gov/). My research is focused on finding new methods in Bayesian Machine Learning, Spatial Statistics, Gaussian Processes, and Uncertainty Quantification, specifically with applications in climate and environmental science.
 
-See here for my [CV](files/JacobJohnsonCV.pdf).
+You can find my publications on my [CV](files/JacobJohnsonCV.pdf) or [Google Scholar](https://scholar.google.com/citations?user=dbN-_3QAAAAJ&hl=en) profile. 
 
 
 :::

@@ -16,49 +16,28 @@ website:
   navbar:
     background: light  # You can change the background color here
 
-    left:   # You can comment out all navigation items here if you just like to keep the index page only
-#      - text: Home
-#        href: index.qmd
+    left:  
       - text: About
-        menu:
-          - text: News
-            href: posts.qmd#category=news
-          - text: Events
-            href: posts.qmd#category=event      
-          - text: Contact
-            href: contact.qmd             
+        href: posts.qmd#category=news
       - text: Research
         menu:
           - text: Publications Listing  # Automatically generated from publications.xlsx
             href: pub-listing.qmd
-          - text: Publications  # Manually curated list of publications
-            href: publications.qmd            
-          - text: Selected Papers
-            href: posts.qmd#category=paper
-          - text: Grants
-            href: projects.qmd                                
-      - text: Teaching # Comment the Teaching part out to remove the Teaching page
-        href: teaching.qmd
-      - text: Outreach
-        menu:        
-        - text: Presentations
-          href: posts.qmd#category=presentation                   
-      - text: Group   # Comment the Group part out to remove the Group page
-        href: people.qmd
-
+          - text: Presentations
+            href: posts.qmd#category=presentation  
+          - text: Projects
+            href: projects.qmd   
+      - text: Contact
+        href: contact.qmd  
+  
+        
     right: 
       - text: CV
         href: files/JacobJohnsonCV.pdf
       - icon: github
         href: https://github.com/jajohnsonstats
         target: _blank
-      - text: "{{< fa brands bluesky >}}"
-        href: https://bsky.app
-        target: _blank      
-      - icon: rss
-        href: posts.xml
-        target: _blank
-  
+
   page-navigation: true
   
   page-footer: 
@@ -68,13 +47,7 @@ website:
       - icon: github
         href: https://github.com/jajohnsonstats
         target: _blank
-      - text: "{{< fa brands bluesky >}}" 
-        href: https://bsky.app
-        target: _blank
-      - icon: rss
-        href: posts.xml
-        target: _blank  
-  
+
   search:
     location: navbar
     type: textbox

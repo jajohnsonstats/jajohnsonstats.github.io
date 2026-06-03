@@ -1,35 +1,21 @@
 ---
 title: "Projects"
-subtitle: "Funded projects"
 page-layout: full
-listing: 
-- id: projects
-  sort: "started desc"
-  type: table
-  fields: [image, title, author, subtitle, description, funding, started, ended]
-  grid-item-align: left
-  grid-columns: 3
-  image-height: 30px
-  field-display-names: 
-      title: "Title"
-      author: "Team"
-      subtitle: "Funder"
-      started: "Start"
-      ended: "End"
-      funding: "Funding"
-#  categories: true
-#  sort-ui: true
-#  filter-ui: true
-  contents: 
-#    - projects/ 
-    - projects.yml 
+css: files/publications/pub-listing.css
 ---
 
+Below are some non-peer-reviewed projects I’ve worked on. Each includes a short description and links to code, documents, etc.
 
-:::{#projects}
-:::
+---
 
+## Functional Labeling of Wisconsin Environments
+Understanding why ecosystems exhibit varying resilience to climate stress is a critical challenge in modern ecology. This study proposes a multi-step latent variable framework to examine modes of ecological vulnerability during the summer 2021 drought in Wisconsin. Utilizing high-resolution satellite imagery data, the proposed model decoupled 10-year historical environmental baselines from acute stress responses. Principal Component Analysis (PCA) condensed static landscape and climate variables, while Confirmatory Factor Analysis (CFA) distilled collinear satellite metrics into two latent axes of stress response. Applying K-means clustering to these reduced dimensions naturally partitioned the state into three geographical vulnerability archetypes.
 
-<!--Include social share buttons-->
+<a href="https://github.com/jajohnsonstats" class="pub-btn btn-github" target="_blank" rel="noopener">
+  <i class="bi bi-github"></i> Code
+</a> <a href="files/projects/711Project_JacobJohnson.pdf" class="pub-btn btn-pdf" target="_blank" rel="noopener">
+  <i class="bi bi-file-earmark-pdf"></i> PDF
+</a>
 
-{{< include /files/includes/_socialshare.qmd >}}
+---
+

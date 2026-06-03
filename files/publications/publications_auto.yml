@@ -1,0 +1,33 @@
+- title: Minibatch Markov Chain Monte Carlo Algorithms for Fitting Gaussian Processes
+  authors: Matthew J. Heaton, Jacob A. Johnson
+  year: '2024'
+  journal: Bayesian Analysis
+  doi: 10.1214/24-BA1459
+  abstract: Gaussian processes (GPs) are a highly flexible, nonparametric statistical
+    model that are commonly used to fit nonlinear relationships or account for correlation
+    between observations. However, the computational load of fitting a Gaussian process
+    is $\mathcal{O}(n^3)$ making them infeasible for use on large datasets. To make
+    GPs more feasible for large datasets, this research focuses on the use of minibatching
+    to estimate GP parameters. Specifically, we outline both approximate and exact
+    minibatch Markov chain Monte Carlo algorithms that substantially reduce the computation
+    of fitting a GP by only considering small subsets of the data at a time. We demonstrate
+    and compare this methodology using various simulations and real datasets.
+  url: https://doi.org/10.1214/24-BA1459
+- title: Fusing Climate Data Products Using a Spatially Varying Autoencoder
+  authors: Jacob A. Johnson, Matthew J. Heaton, William F. Christensen, Lynsie R.
+    Warr, Summer B. Rupper
+  year: '2024'
+  journal: Journal of Agricultural, Biological and Environmental Statistics
+  doi: 10.1007/s13253-024-00657-3
+  abstract: Autoencoders are powerful machine learning models used to compress information
+    from multiple data sources. However, autoencoders, like all artificial neural
+    networks, are often unidentifiable and uninterpretable. This research focuses
+    on creating an identifiable and interpretable autoencoder that can be used to
+    meld and combine climate data products. The proposed autoencoder utilizes a Bayesian
+    statistical framework, allowing for probabilistic interpretations while also varying
+    spatially to capture useful spatial patterns across the various data products.
+    Constraints are placed on the autoencoder as it learns patterns in the data, creating
+    an interpretable consensus that includes the important features from each input.
+    We demonstrate the utility of the autoencoder by combining information from multiple
+    precipitation products in High Mountain Asia.
+  url: https://doi.org/10.1007/s13253-024-00657-3

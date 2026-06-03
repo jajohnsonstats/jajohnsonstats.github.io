@@ -1,47 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://drganghe.github.io/quarto-academic-website-template/teaching.html</loc>
-    <lastmod>2026-05-08T04:00:32.262Z</lastmod>
+    <loc>https://jajohnsonstats.github.io/publications.html</loc>
+    <lastmod>2026-06-03T19:22:35.525Z</lastmod>
   </url>
   <url>
-    <loc>https://drganghe.github.io/quarto-academic-website-template/pub-listing.html</loc>
-    <lastmod>2026-05-08T04:00:32.230Z</lastmod>
+    <loc>https://jajohnsonstats.github.io/presentations.html</loc>
+    <lastmod>2026-06-03T22:23:05.057Z</lastmod>
   </url>
   <url>
-    <loc>https://drganghe.github.io/quarto-academic-website-template/posts.html</loc>
-    <lastmod>2026-05-08T04:00:32.157Z</lastmod>
-  </url>
-  <url>
-    <loc>https://drganghe.github.io/quarto-academic-website-template/posts/news-title/index.html</loc>
-    <lastmod>2026-05-08T04:00:32.182Z</lastmod>
-  </url>
-  <url>
-    <loc>https://drganghe.github.io/quarto-academic-website-template/people.html</loc>
-    <lastmod>2026-05-14T22:12:07.876Z</lastmod>
-  </url>
-  <url>
-    <loc>https://drganghe.github.io/quarto-academic-website-template/contact.html</loc>
+    <loc>https://jajohnsonstats.github.io/contact.html</loc>
     <lastmod>2026-05-14T22:09:39.739Z</lastmod>
   </url>
   <url>
-    <loc>https://drganghe.github.io/quarto-academic-website-template/index.html</loc>
-    <lastmod>2026-05-15T20:05:38.715Z</lastmod>
+    <loc>https://jajohnsonstats.github.io/about.html</loc>
+    <lastmod>2026-06-02T20:34:30.118Z</lastmod>
   </url>
   <url>
-    <loc>https://drganghe.github.io/quarto-academic-website-template/posts/event-title/index.html</loc>
-    <lastmod>2026-05-08T04:00:32.173Z</lastmod>
+    <loc>https://jajohnsonstats.github.io/index.html</loc>
+    <lastmod>2026-06-02T21:35:48.716Z</lastmod>
   </url>
   <url>
-    <loc>https://drganghe.github.io/quarto-academic-website-template/posts/paper-title/index.html</loc>
-    <lastmod>2026-05-08T04:00:32.210Z</lastmod>
-  </url>
-  <url>
-    <loc>https://drganghe.github.io/quarto-academic-website-template/projects.html</loc>
-    <lastmod>2026-05-08T04:00:32.216Z</lastmod>
-  </url>
-  <url>
-    <loc>https://drganghe.github.io/quarto-academic-website-template/publications.html</loc>
-    <lastmod>2026-05-08T04:00:32.236Z</lastmod>
+    <loc>https://jajohnsonstats.github.io/projects.html</loc>
+    <lastmod>2026-06-03T19:57:55.339Z</lastmod>
   </url>
 </urlset>

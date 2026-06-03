@@ -1,0 +1,53 @@
+- title: "Fusing Climate Data Products Using a Spatially Varying Autoencoder"
+  type: ["Contributed Talk", "Invited Talk"]
+  events:
+    - event: "JSM 2023"
+      location: "Toronto, ON"
+      date: 2023-08-10
+    - event: "CPMS Student Research Conference"
+      location: "Provo, UT"
+      date: 2023-02-25
+    - event: "JSM 2024"
+      location: "Portland, OR"
+      date: 2024-08-04
+  slides: files/presentations/BYU_overview_slides.pdf
+  paper: https://doi.org/10.1007/s13253-024-00657-3
+  categories: [contributed, invited]
+  
+- title: "Fusing Climate Data Products Using a Spatially Varying Autoencoder"
+  type: "Poster"
+  events:
+    - event: "ENVR Workshop 2022"
+      location: "Provo, UT"
+      date: 2022-10-06
+  paper: https://doi.org/10.1007/s13253-024-00657-3
+  categories: [poster]
+  
+- title: "Minibatch Markov chain Monte Carlo Algorithms for Fitting Gaussian Processes"
+  type: "Contributed Talk"
+  events:
+    - event: "CPMS Student Research Conference"
+      location: "Provo, UT"
+      date: 2024-02-25
+  slides: files/presentations/BYU_overview_slides.pdf
+  paper: https://doi.org/10.1214/24-BA1459
+  categories: [contributed]
+  
+- title: "Minibatch Markov chain Monte Carlo Algorithms for Fitting Gaussian Processes"
+  type: "Poster"
+  events:
+    - event: "ENVR Workshop 2024"
+      location: "Provo, UT"
+      date: 2024-10-04
+  pdf: files/presentations/MiniBatchGP_Poster.pdf
+  paper: https://doi.org/10.1214/24-BA1459
+  categories: [poster]
+
+- title: "Modeling Bayesian Transport Map Uncertainty for Non-Gaussian Spatial Data via Laplace Approximation"
+  type: "Contributed Talk"
+  events:
+    - event: "JSM 2025"
+      location: "Nashville, TM"
+      date: 2025-08-05
+  slides: files/presentations/Laplace_slides.pdf
+  categories: [contributed]

@@ -1,87 +1,24 @@
 [
   {
-    "objectID": "teaching.html",
-    "href": "teaching.html",
-    "title": "Teaching",
-    "section": "",
-    "text": "Fall 2024,   Fall 2023\nClass 1 introduction."
-  },
-  {
-    "objectID": "teaching.html#class-1",
-    "href": "teaching.html#class-1",
-    "title": "Teaching",
-    "section": "",
-    "text": "Fall 2024,   Fall 2023\nClass 1 introduction."
-  },
-  {
-    "objectID": "teaching.html#class-2",
-    "href": "teaching.html#class-2",
-    "title": "Teaching",
-    "section": "Class 2",
-    "text": "Class 2\n\n\n\n\n\nSpring 2025,   Fall 2023\nClass 2 introduction."
-  },
-  {
-    "objectID": "teaching.html#class-3",
-    "href": "teaching.html#class-3",
-    "title": "Teaching",
-    "section": "Class 3",
-    "text": "Class 3\n\n\n\n\n\nSpring 2025,   Spring 2024\nClass 3 introduction."
-  },
-  {
-    "objectID": "pub-listing.html",
-    "href": "pub-listing.html",
+    "objectID": "publications.html",
+    "href": "publications.html",
     "title": "Publications",
     "section": "",
-    "text": "Note: * corresponding author;  ESI Highly Cited Paper (top 1%);  ESI Hot Paper (top 0.1%)"
+    "text": "Minibatch Markov Chain Monte Carlo Algorithms for Fitting Gaussian Processes Matthew J. Heaton, Jacob A. Johnson 2024-01-01\n\n&lt;span class=\"listing-category\"\n      onclick=\"window.quartoListingCategory('cGVlci1yZXZpZXdlZA=='); return false;\"&gt;peer-reviewed&lt;/span&gt;\n\n\nMatthew J. Heaton, Jacob A. Johnson. 2024. Minibatch Markov Chain Monte Carlo Algorithms for Fitting Gaussian Processes. Bayesian Analysis. doi: 10.1214/24-BA1459.\n\n\n arXiv  arXiv PDF  GitHub  \n\n\n\n\nFusing Climate Data Products Using a Spatially Varying Autoencoder Jacob A. Johnson, Matthew J. Heaton, William F. Christensen, Lynsie R. Warr, Summer B. Rupper 2024-01-01\n\n&lt;span class=\"listing-category\"\n      onclick=\"window.quartoListingCategory('cGVlci1yZXZpZXdlZA=='); return false;\"&gt;peer-reviewed&lt;/span&gt;\n\n&lt;span class=\"listing-category\"\n      onclick=\"window.quartoListingCategory('YXdhcmQ='); return false;\"&gt;award&lt;/span&gt;\n\n\nJacob A. Johnson, Matthew J. Heaton, William F. Christensen, Lynsie R. Warr, Summer B. Rupper. 2024. Fusing Climate Data Products Using a Spatially Varying Autoencoder. Journal of Agricultural, Biological and Environmental Statistics. doi: 10.1007/s13253-024-00657-3.\n\n\n arXiv  arXiv PDF  GitHub  \n\n\n Award: 2024 ENVR Student Paper Competition Winner\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "pub-listing.html#selected-work",
-    "href": "pub-listing.html#selected-work",
-    "title": "Publications",
-    "section": "Selected Work",
-    "text": "Selected Work\n\n\n\nQuantifying the Cost Savings of Global Solar Photovoltaic Supply Chains Helveston, John, Gang He*, and Michael Davidson Oct 26, 2022\n\n&lt;span class=\"listing-category\"\n      onclick=\"window.quartoListingCategory('MjAyMg=='); return false;\"&gt;2022&lt;/span&gt;\n\n&lt;span class=\"listing-category\"\n      onclick=\"window.quartoListingCategory('c2VsZWN0ZWQ='); return false;\"&gt;selected&lt;/span&gt;\n\n&lt;span class=\"listing-category\"\n      onclick=\"window.quartoListingCategory('cGVlci1yZXZpZXdlZA=='); return false;\"&gt;peer-reviewed&lt;/span&gt;\n\n&lt;span class=\"listing-category\"\n      onclick=\"window.quartoListingCategory('YXdhcmQ='); return false;\"&gt;award&lt;/span&gt;\n\n&lt;span class=\"listing-category\"\n      onclick=\"window.quartoListingCategory('aGlnaGx5LWNpdGVk'); return false;\"&gt;highly-cited&lt;/span&gt;\n\n&lt;span class=\"listing-category\"\n      onclick=\"window.quartoListingCategory('aG90LXBhcGVy'); return false;\"&gt;hot-paper&lt;/span&gt;\n\n&lt;span class=\"listing-category\"\n      onclick=\"window.quartoListingCategory('bmF0dXJlLXNlcmllcw=='); return false;\"&gt;nature-series&lt;/span&gt;\n\n&lt;span class=\"listing-category\"\n      onclick=\"window.quartoListingCategory('c3VwcGx5LWNoYWlu'); return false;\"&gt;supply-chain&lt;/span&gt;\n\n&lt;span class=\"listing-category\"\n      onclick=\"window.quartoListingCategory('c29sYXI='); return false;\"&gt;solar&lt;/span&gt;\n\n&lt;span class=\"listing-category\"\n      onclick=\"window.quartoListingCategory('dW5pdGVkLXN0YXRlcw=='); return false;\"&gt;united-states&lt;/span&gt;\n\n&lt;span class=\"listing-category\"\n      onclick=\"window.quartoListingCategory('Y2hpbmE='); return false;\"&gt;china&lt;/span&gt;\n\n&lt;span class=\"listing-category\"\n      onclick=\"window.quartoListingCategory('Z2VybWFueQ=='); return false;\"&gt;germany&lt;/span&gt;\n\n\nHelveston, John, Gang He*, and Michael Davidson. 2022. Quantifying the Cost Savings of Global Solar Photovoltaic Supply Chains. Nature 612: 83-87. doi: 10.1038/s41586-022-05316-6.  \n\n\n Preprint  SharedIt  GitHub  Data  \n\n\n Award: IAMC2022 Best Poster Award\n\n\nCoverage: SBU News | GWU News | UCSD News | Nature Research Highlights | E&E News | Foreign Policy | GRID News | PV Magazine | dot.LA | pvbuzz | InnovateLongIsland | Mercom India | China News | Science and Technology Daily\n\n\nInvited presentation: Peking University | Tsinghua University | Harvard University (M.D.) | ITIF (J.H.) | Climate Change Economics Forum\n\n\n\n\nNo matching items\n\n\n\nRapid Cost Decrease of Renewables and Storage Accelerates the Decarbonization of China's Power System He, Gang*, Jiang Lin*, Froylan Sifuentes, Xu Liu, Nikit Abhyankar, and Amol Phadke* May 15, 2020\n\n&lt;span class=\"listing-category\"\n      onclick=\"window.quartoListingCategory('MjAyMA=='); return false;\"&gt;2020&lt;/span&gt;\n\n&lt;span class=\"listing-category\"\n      onclick=\"window.quartoListingCategory('c2VsZWN0ZWQ='); return false;\"&gt;selected&lt;/span&gt;\n\n&lt;span class=\"listing-category\"\n      onclick=\"window.quartoListingCategory('cGVlci1yZXZpZXdlZA=='); return false;\"&gt;peer-reviewed&lt;/span&gt;\n\n&lt;span class=\"listing-category\"\n      onclick=\"window.quartoListingCategory('aGlnaGx5LWNpdGVk'); return false;\"&gt;highly-cited&lt;/span&gt;\n\n&lt;span class=\"listing-category\"\n      onclick=\"window.quartoListingCategory('bmF0dXJlLXNlcmllcw=='); return false;\"&gt;nature-series&lt;/span&gt;\n\n&lt;span class=\"listing-category\"\n      onclick=\"window.quartoListingCategory('cG93ZXItc3lzdGVt'); return false;\"&gt;power-system&lt;/span&gt;\n\n&lt;span class=\"listing-category\"\n      onclick=\"window.quartoListingCategory('c3dpdGNoLWNoaW5h'); return false;\"&gt;switch-china&lt;/span&gt;\n\n&lt;span class=\"listing-category\"\n      onclick=\"window.quartoListingCategory('c29sYXI='); return false;\"&gt;solar&lt;/span&gt;\n\n&lt;span class=\"listing-category\"\n      onclick=\"window.quartoListingCategory('d2luZA=='); return false;\"&gt;wind&lt;/span&gt;\n\n&lt;span class=\"listing-category\"\n      onclick=\"window.quartoListingCategory('c3RvcmFnZQ=='); return false;\"&gt;storage&lt;/span&gt;\n\n\nHe, Gang*, Jiang Lin*, Froylan Sifuentes, Xu Liu, Nikit Abhyankar, and Amol Phadke*. 2020. Rapid Cost Decrease of Renewables and Storage Accelerates the Decarbonization of China's Power System. Nature Communications 11(1): 2486. doi: 10.1038/s41467-020-16184-x. \n\n\n PDF  GitHub  Supplemental  \n\n\nCoverage: SBU News | LBL News | Carbon Brief Headline | InsideClimateNews | E&E News/ClimateWire | Forbes | Nature News\n\n\nInvited presentation: Asia Pacific Energy Research Centre (APERC) Annual Conference 2020 | Beijing Institute of Technology | Dartmouth College | Harvard Kennedy School Growth Lab\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "pub-listing.html#peer-reviewed-journal-papers",
-    "href": "pub-listing.html#peer-reviewed-journal-papers",
-    "title": "Publications",
-    "section": "Peer-reviewed Journal Papers",
-    "text": "Peer-reviewed Journal Papers\n\n\n\nRapid Cost Decrease of Renewables and Storage Accelerates the Decarbonization of China's Power System He, Gang*, Jiang Lin*, Froylan Sifuentes, Xu Liu, Nikit Abhyankar, and Amol Phadke* May 15, 2020\n\n&lt;span class=\"listing-category\"\n      onclick=\"window.quartoListingCategory('MjAyMA=='); return false;\"&gt;2020&lt;/span&gt;\n\n&lt;span class=\"listing-category\"\n      onclick=\"window.quartoListingCategory('c2VsZWN0ZWQ='); return false;\"&gt;selected&lt;/span&gt;\n\n&lt;span class=\"listing-category\"\n      onclick=\"window.quartoListingCategory('cGVlci1yZXZpZXdlZA=='); return false;\"&gt;peer-reviewed&lt;/span&gt;\n\n&lt;span class=\"listing-category\"\n      onclick=\"window.quartoListingCategory('aGlnaGx5LWNpdGVk'); return false;\"&gt;highly-cited&lt;/span&gt;\n\n&lt;span class=\"listing-category\"\n      onclick=\"window.quartoListingCategory('bmF0dXJlLXNlcmllcw=='); return false;\"&gt;nature-series&lt;/span&gt;\n\n&lt;span class=\"listing-category\"\n      onclick=\"window.quartoListingCategory('cG93ZXItc3lzdGVt'); return false;\"&gt;power-system&lt;/span&gt;\n\n&lt;span class=\"listing-category\"\n      onclick=\"window.quartoListingCategory('c3dpdGNoLWNoaW5h'); return false;\"&gt;switch-china&lt;/span&gt;\n\n&lt;span class=\"listing-category\"\n      onclick=\"window.quartoListingCategory('c29sYXI='); return false;\"&gt;solar&lt;/span&gt;\n\n&lt;span class=\"listing-category\"\n      onclick=\"window.quartoListingCategory('d2luZA=='); return false;\"&gt;wind&lt;/span&gt;\n\n&lt;span class=\"listing-category\"\n      onclick=\"window.quartoListingCategory('c3RvcmFnZQ=='); return false;\"&gt;storage&lt;/span&gt;\n\n\nHe, Gang*, Jiang Lin*, Froylan Sifuentes, Xu Liu, Nikit Abhyankar, and Amol Phadke*. 2020. Rapid Cost Decrease of Renewables and Storage Accelerates the Decarbonization of China's Power System. Nature Communications 11(1): 2486. doi: 10.1038/s41467-020-16184-x. \n\n\n PDF  GitHub  Supplemental  \n\n\nCoverage: SBU News | LBL News | Carbon Brief Headline | InsideClimateNews | E&E News/ClimateWire | Forbes | Nature News\n\n\nInvited presentation: Asia Pacific Energy Research Centre (APERC) Annual Conference 2020 | Beijing Institute of Technology | Dartmouth College | Harvard Kennedy School Growth Lab\n\n\n\n\nNo matching items\n\nPublications – Jacob Johnson Publications – Jacob Johnson Publications – Jacob Johnson Jacob Johnson Personal Academic Website for Jacob Johnson Personal Academic Website for Jacob Johnson Personal Academic Website for Jacob Johnson"
-  },
-  {
-    "objectID": "posts.html",
-    "href": "posts.html",
-    "title": "What’s New & Updated",
+    "objectID": "presentations.html",
+    "href": "presentations.html",
+    "title": "Presentations",
     "section": "",
-    "text": "Order By\n      Default\n      \n        Title\n      \n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n      \n        Author\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nQuarto Academic Website Examples and Tips\n\n\n\n\n\n\nnews\n\n\n\nExamples and tips for Quarto Academic Website\n\n\n\n\n\nOct 15, 2024\n\n\nDr. Gang He\n\n\n\n\n\n\n\n\n\n\n\n\nEvent item\n\n\n\n\n\n\nevent\n\npresentation\n\n\n\nAbout Event item.\n\n\n\n\n\nSep 3, 2024\n\n\nEvent\n\n\n\n\n\n\n\n\n\n\n\n\nNews item\n\n\n\n\n\n\nnews\n\n\n\nAbout new item\n\n\n\n\n\nJun 24, 2024\n\n\nNews\n\n\n\n\n\n\n\n\n\n\n\n\nCan quantum-mechanical description of physical reality be considered complete?\n\n\nPhysical Review\n\n\n\npaper\n\n\n\nOne is thus led to conclude that the description of reality as given by a wave function is not complete.\n\n\n\n\n\nMay 15, 1935\n\n\nAlbert Einstein, Boris Podolsky, Nathan Rosen\n\n\n\n\n\nNo matching items"
+    "text": "Contributed Talk\n\n\n\nJSM 2025, Nashville, TM — August 05, 2025\n\n\n\n  Slides"
   },
   {
-    "objectID": "posts/news-title/index.html",
-    "href": "posts/news-title/index.html",
-    "title": "News item",
-    "section": "",
-    "text": "About the news"
-  },
-  {
-    "objectID": "posts/news-title/index.html#summary",
-    "href": "posts/news-title/index.html#summary",
-    "title": "News item",
-    "section": "",
-    "text": "About the news"
-  },
-  {
-    "objectID": "people.html",
-    "href": "people.html",
-    "title": "People",
-    "section": "",
-    "text": "To be deleted. Also delete the people folder. ## Team"
-  },
-  {
-    "objectID": "people.html#alumni",
-    "href": "people.html#alumni",
-    "title": "People",
-    "section": "Alumni",
-    "text": "Alumni\n\n\n   \n    \n    \n      Order By\n      Default\n      \n      \n      \n        Name\n      \n      \n        Role\n      \n      \n        Started\n      \n      \n        Ended\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n \n\n\n\nName\n\n\n\nRole\n\n\n\nStarted\n\n\n\nEnded\n\n\n\n\n\n\n\n\n\n\n\nAlumni A\n\n\nPhD Alumni\n\n\n2022-01\n\n\n2026-01\n\n\n\n\n\n\n\n\n\nAlumni B\n\n\nMasters Alumni\n\n\n2024-01\n\n\n2025-01\n\n\n\n\n\n\n\n\n\nAlumni C\n\n\nUndergraduate Alumni\n\n\n2023-01\n\n\n2024-01\n\n\n\n\n\n\nNo matching items"
+    "objectID": "presentations.html#posters",
+    "href": "presentations.html#posters",
+    "title": "Presentations",
+    "section": "Posters",
+    "text": "Posters\n\n\nMinibatch Markov chain Monte Carlo Algorithms for Fitting Gaussian Processes\n\n\nPoster\n\n\n\nENVR Workshop 2024, Provo, UT — October 04, 2024\n\n\n\n  PDF    Paper \n\n\n\n\n\nFusing Climate Data Products Using a Spatially Varying Autoencoder\n\n\nPoster\n\n\n\nENVR Workshop 2022, Provo, UT — October 06, 2022\n\n\n\n  Paper"
   },
   {
     "objectID": "contact.html",
@@ -91,45 +28,31 @@
     "text": "Jacob Johnson\nUniversity of Wisconsin–Madison\nDepartment of Statistics\n1205 University Avenue\nMadison, WI 53706\nEmail: jajohnsonstats@gmail.com"
   },
   {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Jacob Johnson",
+    "section": "",
+    "text": "About Me\nI’m a second year PhD student at the University of Wisconsin–Madison working with Dr. Matthias Katzfuß. I am also a year-round statistics intern at Sandia National Laboratories working with Katherine Goode.\nMy research is focused on finding new methods in Spatial Statistics, Gaussian Processes, and Uncertainty Quantification, specifically with applications in climate and environmental science.\nBefore starting my PhD, I did my undergrad at BYU where I did research with Dr. Matthew Heaton.\nI’m originally from Lindon UT, and my hobbies include watching college sports, camping, hiking, and playing with my son."
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Jacob Johnson",
     "section": "",
-    "text": "Google Scholar\n  \n  \n    \n     E-mail\n  \n  \n    \n     GitHub\n  \n  \n    \n     LinkedIn\n  \n  \n      ORCID\n  \n  \n    \n     Katzfuss Group\n  \n\n  \n  \nI’m a second year PhD student at the University of Wisconsin – Madison and year-round intern at Sandia National Laboratories. My research is focused on finding new methods in Bayesian Machine Learning, Spatial Statistics, Gaussian Processes, and Uncertainty Quantification, specifically with applications in climate and environmental science.\nYou can find my publications on my CV or Google Scholar profile."
-  },
-  {
-    "objectID": "posts/paper-title/index.html#abstract",
-    "href": "posts/paper-title/index.html#abstract",
-    "title": "Can quantum-mechanical description of physical reality be considered complete?",
-    "section": "Abstract",
-    "text": "Abstract\nIn a complete theory there is an element corresponding to each element of reality. A sufficient condition for the reality of a physical quantity is the possibility of predicting it with certainty, without disturbing the system. In quantum mechanics in the case of two physical quantities described by non-commuting operators, the knowledge of one precludes the knowledge of the other. Then either (1) the description of reality given by the wave function in quantum mechanics is not complete or (2) these two quantities cannot have simultaneous reality. Consideration of the problem of making predictions concerning a system on the basis of measurements made on another system that had previously interacted with it leads to the result that if (1) is false then (2) is also false. One is thus led to conclude that the description of reality as given by a wave function is not complete."
-  },
-  {
-    "objectID": "posts/paper-title/index.html#links",
-    "href": "posts/paper-title/index.html#links",
-    "title": "Can quantum-mechanical description of physical reality be considered complete?",
-    "section": "Links",
-    "text": "Links\nPublished paper"
+    "text": "Google Scholar\n  \n  \n    \n     E-mail\n  \n  \n    \n     GitHub\n  \n  \n    \n     LinkedIn\n  \n  \n      ORCID\n  \n  \n    \n     Katzfuss Group\n  \n\n  \n  \nI’m a second year PhD student at the University of Wisconsin–Madison working with Dr. Matthias Katzfuß. I am also a year-round statistics intern at Sandia National Laboratories working with Katherine Goode.\nMy research is focused on finding new methods in Spatial Statistics, Gaussian Processes, and Uncertainty Quantification, specifically with applications in climate and environmental science.\nYou can find my publications on my CV or Google Scholar profile."
   },
   {
     "objectID": "projects.html",
     "href": "projects.html",
     "title": "Projects",
     "section": "",
-    "text": "Order By\n      Default\n      \n      \n      \n        Title\n      \n      \n        Team\n      \n      \n        Funder\n      \n      \n        Description\n      \n      \n        Start\n      \n      \n        End\n      \n      \n        Funding\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n \n\n\n\nTitle\n\n\n\nTeam\n\n\n\nFunder\n\n\n\nDescription\n\n\n\nFunding\n\n\n\nStart\n\n\n\nEnd\n\n\n\n\n\n\n\n\n\n\n\nExploring \n\n\nAcademic Website\n\n\nFunder\n\n\nThe goal of this project is to investigate .\n\n\n$0\n\n\n2024\n\n\n2025\n\n\n\n\n\n\nNo matching items"
+    "text": "Below are some non-peer-reviewed projects I’ve worked on. Each includes a short description and links to code, documents, etc."
   },
   {
-    "objectID": "publications.html",
-    "href": "publications.html",
-    "title": "Publications",
-    "section": "",
-    "text": "Notes: * corresponding author; GS graduate student advisee; VS visiting scholar;  ESI Highly Cited Paper (top 1%);  ESI Hot Paper (top 0.1%)\nTotal citations as of January 2025:"
-  },
-  {
-    "objectID": "publications.html#selected-work",
-    "href": "publications.html#selected-work",
-    "title": "Publications",
-    "section": "Selected Work",
-    "text": "Selected Work\nEinstein, A., Podolsky, B., & Rosen, N. (1935). Can quantum-mechanical description of physical reality be considered complete?. Physical review, 47(10), 777. [pdf] [code and data]   \n\n\n\n\n\n\nEinstein, A. (1965). Concerning an heuristic point of view toward the emission and transformation of light. American Journal of Physics, 33(5), 367. [pdf]"
+    "objectID": "projects.html#functional-labeling-of-wisconsin-environments",
+    "href": "projects.html#functional-labeling-of-wisconsin-environments",
+    "title": "Projects",
+    "section": "Functional Labeling of Wisconsin Environments",
+    "text": "Functional Labeling of Wisconsin Environments\nUnderstanding why ecosystems exhibit varying resilience to climate stress is a critical challenge in modern ecology. This study proposes a multi-step latent variable framework to examine modes of ecological vulnerability during the summer 2021 drought in Wisconsin. Utilizing high-resolution satellite imagery data, the proposed model decoupled 10-year historical environmental baselines from acute stress responses. Principal Component Analysis (PCA) condensed static landscape and climate variables, while Confirmatory Factor Analysis (CFA) distilled collinear satellite metrics into two latent axes of stress response. Applying K-means clustering to these reduced dimensions naturally partitioned the state into three geographical vulnerability archetypes.\n  Code    PDF"
   }
 ]

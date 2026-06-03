@@ -1,0 +1,19 @@
+- title: Minibatch Markov Chain Monte Carlo Algorithms for Fitting Gaussian Processes
+  doi: 10.1214/24-BA1459
+  arxiv_id: 2310.17766
+  arxiv: https://arxiv.org/abs/2310.17766
+  arxiv_pdf: https://arxiv.org/pdf/2310.17766
+  github: https://github.com/jajohnsonstats/MiniBatchGPs
+  path: ""
+  categories: [peer-reviewed]
+  
+- title: Fusing Climate Data Products Using a Spatially Varying Autoencoder
+  doi: 10.1007/s13253-024-00657-3
+  testing: this is test V2
+  arxiv_id: 2403.07822
+  arxiv: https://arxiv.org/abs/2403.07822
+  arxiv_pdf: https://arxiv.org/pdf/2403.07822
+  github: https://github.com/jajohnsonstats/Weather-Autoencoder
+  path: ""
+  awards: 2024 ENVR Student Paper Competition Winner
+  categories: [peer-reviewed, award]

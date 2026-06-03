@@ -1,0 +1,190 @@
+---
+title: "Presentations"
+page-layout: full
+css: files/publications/pub-listing.css
+---
+
+```{r}
+#| echo: false
+#| results: asis
+#| warning: false
+
+library(yaml)
+
+## Helper to format date
+fmt_date <- function(d) {
+  format(as.Date(d), "%B %d, %Y")
+}
+
+## Helper to get most recent event date for a presentation
+latest_event_date <- function(p) {
+  dates <- as.Date(vapply(p$events, function(ev) ev$date, character(1)))
+  max(dates, na.rm = TRUE)
+}
+
+## Read in presentations
+pres <- yaml::read_yaml("files/presentations/presentations.yml")
+
+## Sort by most recent
+pres <- pres[order(vapply(pres, latest_event_date, as.Date("1900-01-01")), decreasing = TRUE)]
+
+## Separate into Talks and Posters
+talks <- Filter(function(p) !("poster" %in% p$categories), pres)
+posters <- Filter(function(p) "poster" %in% p$categories, pres)
+
+```
+
+```{r}
+#| echo: false
+#| results: asis
+#| warning: false
+
+for (p in talks) {
+
+  cat("<div class='presentation-item'>\n")
+
+  ## Title + type
+  cat(sprintf("<h3 class='pres-title'>%s</h3>\n", p$title))
+  types <- p$type
+  if (!is.null(types) && !is.vector(types)) {
+    types <- as.vector(types)
+  }
+  type_str <- paste(types, collapse = ", ")
+  cat(sprintf("<p class='pres-type'><em>%s</em></p>\n", type_str))
+
+  ## Events list
+  cat("<ul class='pres-events'>\n")
+  for (ev in p$events) {
+    cat("<li>")
+    cat(sprintf("<strong>%s</strong>, %s — %s",
+                ev$event,
+                ev$location,
+                fmt_date(ev$date)))
+    cat("</li>\n")
+  }
+  cat("</ul>\n")
+
+  ## Buttons (Slides, Video, Code, PDF)
+  cat("<p class='pres-links'>\n")
+
+  if (!is.null(p$slides)) {
+    cat(sprintf(
+      "<a href='%s' class='pub-btn btn-pdf' target='_blank' rel='noopener'>
+         <i class='bi bi-file-earmark-pdf'></i> Slides
+       </a> ",
+      p$slides
+    ))
+  }
+
+  if (!is.null(p$code)) {
+    cat(sprintf(
+      "<a href='%s' class='pub-btn btn-github' target='_blank' rel='noopener'>
+         <i class='bi bi-github'></i> Code
+       </a> ",
+      p$code
+    ))
+  }
+
+  if (!is.null(p$pdf)) {
+    cat(sprintf(
+      "<a href='%s' class='pub-btn btn-pdf' target='_blank' rel='noopener'>
+         <i class='bi bi-file-earmark-pdf'></i> PDF
+       </a> ",
+      p$pdf
+    ))
+  }
+
+  if (!is.null(p$paper)) {
+    cat(sprintf(
+      "<a href='%s' class='pub-btn btn-preprint' target='_blank' rel='noopener'>
+         <i class='bi bi-journal-text'></i> Paper
+       </a> ",
+      p$paper
+    ))
+  }
+
+  cat("</p>\n")
+
+  cat("<hr class='pub-divider'>\n")
+  cat("</div>\n\n")
+}
+```
+
+## Posters
+
+```{r}
+#| echo: false
+#| results: asis
+#| warning: false
+
+for (p in posters) {
+
+  cat("<div class='presentation-item'>\n")
+
+  ## Title + type
+  cat(sprintf("<h3 class='pres-title'>%s</h3>\n", p$title))
+  types <- p$type
+  if (!is.null(types) && !is.vector(types)) {
+    types <- as.vector(types)
+  }
+  type_str <- paste(types, collapse = ", ")
+  cat(sprintf("<p class='pres-type'><em>%s</em></p>\n", type_str))
+
+  ## Events list
+  cat("<ul class='pres-events'>\n")
+  for (ev in p$events) {
+    cat("<li>")
+    cat(sprintf("<strong>%s</strong>, %s — %s",
+                ev$event,
+                ev$location,
+                fmt_date(ev$date)))
+    cat("</li>\n")
+  }
+  cat("</ul>\n")
+
+  ## Buttons (Slides, Video, Code, PDF)
+  cat("<p class='pres-links'>\n")
+
+  if (!is.null(p$slides)) {
+    cat(sprintf(
+      "<a href='%s' class='pub-btn btn-pdf' target='_blank' rel='noopener'>
+         <i class='bi bi-file-earmark-pdf'></i> Slides
+       </a> ",
+      p$slides
+    ))
+  }
+
+  if (!is.null(p$code)) {
+    cat(sprintf(
+      "<a href='%s' class='pub-btn btn-github' target='_blank' rel='noopener'>
+         <i class='bi bi-github'></i> Code
+       </a> ",
+      p$code
+    ))
+  }
+
+  if (!is.null(p$pdf)) {
+    cat(sprintf(
+      "<a href='%s' class='pub-btn btn-pdf' target='_blank' rel='noopener'>
+         <i class='bi bi-file-earmark-pdf'></i> PDF
+       </a> ",
+      p$pdf
+    ))
+  }
+
+  if (!is.null(p$paper)) {
+    cat(sprintf(
+      "<a href='%s' class='pub-btn btn-preprint' target='_blank' rel='noopener'>
+         <i class='bi bi-journal-text'></i> Paper
+       </a> ",
+      p$paper
+    ))
+  }
+
+  cat("</p>\n")
+
+  cat("<hr class='pub-divider'>\n")
+  cat("</div>\n\n")
+}
+```
+

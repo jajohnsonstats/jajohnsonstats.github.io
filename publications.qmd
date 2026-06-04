@@ -1,6 +1,7 @@
 ---
 title: "Publications"
 description-meta: "My papers and publications"
+title-block-banner: false
 css: files/publications/pub-listing.css
 filters: [files/publications/remove-stray-divfence.lua]
 listing:
@@ -9,6 +10,9 @@ listing:
     type: custom
     page-size: 200
     template: files/publications/pub-listing.ejs
+    filter-ui: 
+      - search
+      - year
 ---
 
 {{< include /files/includes/_academic.qmd >}}

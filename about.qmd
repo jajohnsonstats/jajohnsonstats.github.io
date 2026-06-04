@@ -16,9 +16,9 @@ about:
 :::{#hero-heading}
 # About Me
 
-I'm a second year PhD student at the [University of Wisconsin–Madison](https://stat.wisc.edu/) working with [Dr. Matthias Katzfuß](https://sites.google.com/view/katzfuss/home). I am also a year-round statistics intern at [Sandia National Laboratories](https://www.sandia.gov/) working with [Katherine Goode](https://goodekat.github.io/).  
+I'm a second year PhD student at the [University of Wisconsin–Madison](https://stat.wisc.edu/) working with [Dr. Matthias Katzfuß](https://sites.google.com/view/katzfuss/home). I am also a year-round statistics intern at [Sandia National Laboratories](https://www.sandia.gov/) working with [Dr. Katherine Goode](https://goodekat.github.io/).  
 My research is focused on finding new methods in Spatial Statistics, Gaussian Processes, and Uncertainty Quantification, specifically with applications in climate and environmental science.  
-Before starting my PhD, I did my undergrad at [BYU](https://statistics.byu.edu/) where I did research with [Dr. Matthew Heaton](https://mheaton.byu.edu/).
+Before starting my PhD, I did my undergrad at [Brigham Young University](https://statistics.byu.edu/) where I did research with [Dr. Matthew Heaton](https://mheaton.byu.edu/).
 
 I'm originally from Lindon UT, and my hobbies include watching college sports, camping, hiking, and playing with my son. 
 

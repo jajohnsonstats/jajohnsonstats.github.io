@@ -37,7 +37,7 @@ about:
 
 :::{#hero-heading}
 
-I'm a second year PhD student at the [University of Wisconsin–Madison](https://stat.wisc.edu/) working with [Dr. Matthias Katzfuß](https://sites.google.com/view/katzfuss/home). I am also a year-round statistics intern at [Sandia National Laboratories](https://www.sandia.gov/) working with [Katherine Goode](https://goodekat.github.io/).  
+I'm a second year PhD student at the [University of Wisconsin–Madison](https://stat.wisc.edu/) working with [Dr. Matthias Katzfuß](https://sites.google.com/view/katzfuss/home). I am also a year-round statistics intern at [Sandia National Laboratories](https://www.sandia.gov/) working with [Dr. Katherine Goode](https://goodekat.github.io/).  
 My research is focused on finding new methods in Spatial Statistics, Gaussian Processes, and Uncertainty Quantification, specifically with applications in climate and environmental science.
 
 You can find my publications on my [CV](files/CV/JacobJohnsonCV.pdf) or [Google Scholar](https://scholar.google.com/citations?user=dbN-_3QAAAAJ&hl=en) profile. 

@@ -85,7 +85,7 @@ ul.task-list li input[type="checkbox"] {
     const options = {
       valueNames: ['listing-title','listing-authors','listing-year','listing-journal','listing-doi','listing-abstract','listing-url','listing-arxiv_id','listing-arxiv','listing-arxiv_pdf','listing-github','listing-categories','listing-testing','listing-awards',{ data: ['index'] },{ data: ['categories'] }],
       
-      searchColumns: ["listing-title","listing-authors","listing-year","listing-journal","listing-doi","listing-abstract","listing-url","listing-arxiv_id","listing-arxiv","listing-arxiv_pdf","listing-github","listing-categories","listing-testing","listing-awards"],
+      searchColumns: ["listing-search","listing-year"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -281,6 +281,12 @@ https://badge.dimensions.ai/
 <script async="" src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script>
 <script type="text/javascript" src="//cdn.plu.mx/widget-popup.js"></script>
 <div id="listing-pubs" class="quarto-listing quarto-listing-container-custom">
+<div class="listing-actions-group">
+    <div class="input-group input-group-sm quarto-listing-filter">
+      <span class="input-group-text"><i class="bi bi-search"></i></span>
+      <input type="text" class="search form-control" placeholder="Filter">
+    </div>
+</div>
 <div class="pub-listing list">
 <div class="pub-item" data-index="0" data-categories="cGVlci1yZXZpZXdlZA==">
 <p><span class="listing-title d-none">Minibatch Markov Chain Monte Carlo Algorithms for Fitting Gaussian Processes</span> <span class="listing-author d-none">Matthew J. Heaton, Jacob A. Johnson</span> <span class="listing-date d-none">2024-01-01</span></p>

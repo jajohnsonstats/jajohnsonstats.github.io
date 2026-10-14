@@ -1,0 +1,143 @@
+<%
+/* =====================================================================
+   project-listing.ejs: Quarto custom listing template for the
+   Projects page
+   ---------------------------------------------------------------------
+   Data:   files/projects/projects.yml
+   Page:   projects.qmd
+   Styles: files/publications/pub-listing.css (shared with Publications
+           and Presentations), files/projects/project-listing.css
+
+   Layout of each project (same shape as the other two pages):
+     Title
+     Context (e.g. "Course project, STAT 711")              Month Year
+     Summary (optional, always visible)
+     [Report] [Code] [Slides] [Poster] [Data] [Website]
+     > Abstract (optional, click to expand)
+     ---------------------------------------------------------------
+
+   Note: EJS runs when Quarto renders the site, not in the visitor's
+   browser. Sorting is fixed until the next render.
+
+   Output tags (Quarto's template engine; opposite of plain EJS!):
+     the <%- tag writes a value as ESCAPED text  (safe for titles, URLs)
+     the <%= tag writes a value as RAW HTML      (lets simple HTML through)
+   ===================================================================== */
+
+
+/* ---------------------------------------------------------------------
+   SETTINGS: things you are most likely to want to change
+   --------------------------------------------------------------------- */
+
+// Month names: same convention as the CV and the other pages.
+const MONTHS = ["Jan", "Feb", "March", "April", "May", "June",
+                "July", "Aug", "Sept", "Oct", "Nov", "Dec"];
+
+// Buttons, in the order they appear on the page.
+// Each row: [YAML field, button text, button color class, Bootstrap icon]
+// Same colors and icons as the Publications and Presentations pages.
+// Color classes are defined in files/publications/pub-listing.css.
+// Icons: https://icons.getbootstrap.com/
+const BUTTONS = [
+  ["report",  "Report",  "btn-red",    "bi-file-earmark-pdf"],
+  ["code",    "Code",    "btn-blue",   "bi-github"],
+  ["slides",  "Slides",  "btn-red",    "bi-file-earmark-slides"],
+  ["poster",  "Poster",  "btn-red",    "bi-window-fullscreen"],
+  ["data",    "Data",    "btn-amber",  "bi-database"],
+  ["website", "Website", "btn-indigo", "bi-globe"]
+];
+
+
+/* ---------------------------------------------------------------------
+   HELPERS (same as in pub-listing.ejs)
+   --------------------------------------------------------------------- */
+
+// True if a field is present and not empty.
+const has = (v) => v !== undefined && v !== null && String(v).trim() !== "";
+
+// Dates may arrive as text ("2025-12") or, for full dates, as Date objects.
+const dateString = (d) =>
+  d instanceof Date ? d.toISOString().slice(0, 10) : String(d || "").trim();
+
+// Sortable number: "2025-12-03" -> 20251203, "2025-12" -> 20251200, "2025" -> 20250000.
+// Missing dates give 0, so those projects sort last.
+const dateKey = (d) => {
+  const m = dateString(d).match(/^(\d{4})(?:-(\d{1,2}))?(?:-(\d{1,2}))?/);
+  return m ? Number(m[1]) * 10000 + Number(m[2] || 0) * 100 + Number(m[3] || 0) : 0;
+};
+
+// Display: "Dec 2025", or just "2025" when there's no month.
+const formatDate = (d) => {
+  const m = dateString(d).match(/^(\d{4})(?:-(\d{1,2}))?/);
+  if (!m) return dateString(d);
+  return m[2] ? MONTHS[Number(m[2]) - 1] + " " + m[1] : m[1];
+};
+
+
+/* ---------------------------------------------------------------------
+   SORTING: newest first by `when`; projects without one go last.
+   (The field is `when`, not `date`: Quarto rewrites a top-level `date`
+   field into display text like "Dec 1, 2025", which can't be sorted.)
+   (projects.qmd sets `sort: false` so Quarto doesn't re-sort.)
+   --------------------------------------------------------------------- */
+const projects = items.slice().sort((a, b) => dateKey(b.when) - dateKey(a.when));
+%>
+
+<%/* Raw HTML fence: keeps Pandoc from re-parsing this HTML as Markdown
+     (which turns indented lines and blank lines into stray tags). Keep
+     both fence lines exactly as they are, each on its own line. */%>
+```{=html}
+<%/* Outer wrapper. The "list" class is required by Quarto's listing
+     JavaScript (List.js). */%>
+<div class="pub-listing project-listing list">
+
+<% if (projects.length === 0) { %>
+  <p class="pub-empty">No projects listed yet.</p>
+<% } %>
+
+<% for (const item of projects) { %>
+<%/* metadataAttrs(item) adds the data-* attributes Quarto's listing
+     JavaScript expects on each item. Keep it on this element. */%>
+<div class="pub-item project-item" <%= metadataAttrs(item) %>>
+
+  <%/* Hidden copy of the title for Quarto's listing search (unused). */%>
+  <span class="listing-title d-none"><%- item.title %></span>
+
+  <%/* ── Title ─────────────────────────────────────────────────── */%>
+  <h2 class="pub-heading"><%- item.title %></h2>
+
+  <%/* ── Context on the left, date on the right ───────────────── */%>
+  <% if (has(item.context) || has(item.when)) { %>
+  <div class="pub-venue-row">
+    <span class="pub-venue"><% if (has(item.context)) { %><em><%- item.context %></em><% } %></span>
+    <span class="pub-date"><% if (has(item.when)) { %><%- formatDate(item.when) %><% } %></span>
+  </div>
+  <% } %>
+
+  <%/* ── Summary (optional, always visible) ───────────────────── */%>
+  <% if (has(item.summary)) { %>
+  <p class="project-summary"><%= item.summary %></p>
+  <% } %>
+
+  <%/* ── Buttons (only the ones with a link) ───────────────────── */%>
+  <% const buttons = BUTTONS.filter(([field]) => has(item[field])); %>
+  <% if (buttons.length > 0) { %>
+  <p class="pub-links"><%
+    for (const [field, text, colorClass, icon] of buttons) { %><a href="<%- item[field] %>" class="pub-btn <%- colorClass %>" target="_blank" rel="noopener"><i class="bi <%- icon %>" aria-hidden="true"></i> <%- text %></a> <% } %></p>
+  <% } %>
+
+  <%/* ── Abstract (collapsed; click to expand) ─────────────────── */%>
+  <% if (has(item.abstract)) { %>
+  <details class="pub-abstract">
+    <summary>Abstract</summary>
+    <p><%- item.abstract %></p>
+  </details>
+  <% } %>
+
+  <hr class="pub-divider">
+
+</div>
+<% } %>
+
+</div><%/* end .project-listing */%>
+```

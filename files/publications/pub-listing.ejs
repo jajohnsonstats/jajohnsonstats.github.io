@@ -1,117 +1,211 @@
 <%
-/*
-  pub-listing.ejs  —  Quarto custom listing template for academic publications
-  Line 1: authors. year. title. journal vol(issue): pages. doi [badges]
-  Line 2: PDF | Preprint | SharedIt | Code | Data | Supplemental | metrics
-  Line 3: Award (if any)
+/* =====================================================================
+   pub-listing.ejs: Quarto custom listing template for the
+   Publications page
+   ---------------------------------------------------------------------
+   Data:   files/publications/publications.yml
+           (GENERATED from files/CV/publications.bib by bib_to_yml.py;
+            edit the .bib, not the YAML)
+   Page:   publications.qmd
+   Styles: files/publications/pub-listing.css (shared with Presentations)
 
-  Requires Quarto >= 1.6.42:
-  - metadataAttrs(item) on each item element (enables List.js sort/filter/pagination)
-  - utils.b64encode(category) in category onclick (categories are base64-encoded since 1.6.42)
-  - Outer wrapper must have class="list" for List.js to recognise the container
-*/
+   Layout of each paper (same shape as the Presentations page):
+     Title
+     Authors (my name in bold)
+     Journal 31(2), 273–286                                 Month Year
+     [trophy] Award (optional)
+     [Paper] [Preprint] [Code] [Slides] [Poster] [Data] [Supplement]
+     > Abstract (click to expand)
+     ---------------------------------------------------------------
+
+   Sections: papers are grouped into "Preprints" and "Peer-reviewed",
+   but the headings only appear when BOTH groups have at least one
+   paper. Until you have a preprint, the page is one plain list.
+
+   Note: EJS runs when Quarto renders the site, not in the visitor's
+   browser. Sorting and grouping are fixed until the next render.
+
+   Output tags (Quarto's template engine; opposite of plain EJS!):
+     the <%- tag writes a value as ESCAPED text  (safe for titles, URLs)
+     the <%= tag writes a value as RAW HTML      (for HTML we build here)
+   ===================================================================== */
+
+
+/* ---------------------------------------------------------------------
+   SETTINGS: things you are most likely to want to change
+   --------------------------------------------------------------------- */
+
+// Section order and headings. Keys match the `status` field that
+// bib_to_yml.py writes ("preprint" or "published").
+const SECTIONS = [
+  ["preprint",  "Preprints"],
+  ["published", "Peer-reviewed"]
+];
+
+// Month names: same convention as the CV and the Presentations page.
+const MONTHS = ["Jan", "Feb", "March", "April", "May", "June",
+                "July", "Aug", "Sept", "Oct", "Nov", "Dec"];
+
+// Buttons, in the order they appear on the page.
+// Each row: [YAML field, button text, button color class, Bootstrap icon]
+// Same names, colors, and icons as the Presentations page.
+// Color classes are defined in pub-listing.css. Icons: https://icons.getbootstrap.com/
+const BUTTONS = [
+  ["paper",      "Paper",      "btn-indigo", "bi-journal-text"],
+  ["preprint",   "Preprint",   "btn-teal",   "bi-file-earmark-text"],
+  ["code",       "Code",       "btn-blue",   "bi-github"],
+  ["slides",     "Slides",     "btn-red",    "bi-file-earmark-slides"],
+  ["poster",     "Poster",     "btn-red",    "bi-window-fullscreen"],
+  ["data",       "Data",       "btn-amber",  "bi-database"],
+  ["supplement", "Supplement", "btn-slate",  "bi-paperclip"]
+];
+
+
+/* ---------------------------------------------------------------------
+   HELPERS
+   --------------------------------------------------------------------- */
+
+// True if a field is present and not empty.
+const has = (v) => v !== undefined && v !== null && String(v).trim() !== "";
+
+// Dates may arrive as text ("2026-06") or, for full dates, as Date objects.
+const dateString = (d) =>
+  d instanceof Date ? d.toISOString().slice(0, 10) : String(d || "").trim();
+
+// Sortable number: "2026-06-03" -> 20260603, "2026-06" -> 20260600, "2026" -> 20260000.
+const dateKey = (d) => {
+  const m = dateString(d).match(/^(\d{4})(?:-(\d{1,2}))?(?:-(\d{1,2}))?/);
+  return m ? Number(m[1]) * 10000 + Number(m[2] || 0) * 100 + Number(m[3] || 0) : 0;
+};
+
+// Display: "June 2026", or just "2026" when there's no month.
+const formatDate = (d) => {
+  const m = dateString(d).match(/^(\d{4})(?:-(\d{1,2}))?/);
+  if (!m) return dateString(d);
+  return m[2] ? MONTHS[Number(m[2]) - 1] + " " + m[1] : m[1];
+};
+
+// Escape text for HTML. Needed inside formatAuthors/venueDetails because
+// their results are written with the RAW tag (<%=).
+const esc = (s) => String(s)
+  .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+
+// Author list with my name in bold: "A, **B**, C, and D".
+// Uses the `me` flag set by bib_to_yml.py.
+const formatAuthors = (authors) => {
+  const names = (authors || []).map((a) =>
+    a.me ? '<strong class="pub-me">' + esc(a.name) + "</strong>" : esc(a.name));
+  if (names.length <= 2) return names.join(" and ");
+  return names.slice(0, -1).join(", ") + ", and " + names[names.length - 1];
+};
+
+// Venue details after the journal name: "31(2), 273–286", "31, 273–286", or
+// "arXiv:2403.07822" for a preprint with no journal yet.
+const venueDetails = (item) => {
+  let out = "";
+  if (has(item.volume)) out += esc(item.volume);
+  if (has(item.issue))  out += "(" + esc(item.issue) + ")";
+  if (has(item.pages))  out += (out ? ", " : "") + esc(item.pages);
+  return out;
+};
+
+
+/* ---------------------------------------------------------------------
+   SORTING AND GROUPING
+   Newest first within each section. (publications.qmd sets
+   `sort: false` so Quarto doesn't re-sort.)
+   --------------------------------------------------------------------- */
+const sorted = items.slice().sort((a, b) => dateKey(b.pubdate) - dateKey(a.pubdate));
+
+const groups = SECTIONS
+  .map(([status, heading]) => ({
+    heading: heading,
+    papers: sorted.filter((it) => (it.status || "published") === status)
+  }))
+  .filter((g) => g.papers.length > 0);
+
+// Show section headings only when there's more than one non-empty group.
+const showHeadings = groups.length > 1;
+
+// Paper titles are <h2> normally, or <h3> under a section heading.
+const titleTag = showHeadings ? "h3" : "h2";
 %>
 
-<%/* ── Outer wrapper: class="list" is required for List.js */%>
+<%/* Raw HTML fence: Quarto inserts this template's output into the page
+     as Markdown, and Pandoc would otherwise re-parse the HTML (indented
+     lines and blank lines get turned into stray <p> tags and "::: "
+     text). Everything between ```{=html} and ``` is passed through
+     untouched. Keep both fence lines exactly as they are, each on its
+     own line. This replaces the old remove-stray-divfence.lua filter. */%>
+```{=html}
+<%/* Outer wrapper. The "list" class is required by Quarto's listing
+     JavaScript (List.js). */%>
 <div class="pub-listing list">
 
-<% for (const item of items) {
-  const catsArr = Array.isArray(item.categories)
-    ? item.categories
-    : (item.categories ? String(item.categories).split(new RegExp('[,;|]')).map(function(s){ return s.trim(); }).filter(Boolean) : []);
-
-  const vol = item.volume ? String(item.volume) : "";
-  const iss = item.issue  ? String(item.issue)  : "";
-  const pgs = item.pages  ? String(item.pages)  : "";
-  let volRef = "";
-  if (vol) volRef += vol;
-  if (iss) volRef += "(" + iss + ")";
-  if (pgs) volRef += ": " + pgs;
-
-  const hasDoi      = !!(item.doi          && item.doi          !== "");
-  const hasPdf      = !!(item.pdf          && item.pdf          !== "");
-  const hasPreprint = !!(item.preprint     && item.preprint     !== "");
-  const hasArxivAbs = !!(item.arxiv        && item.arxiv        !== "");
-  const hasArxivPdf = !!(item.arxiv_pdf    && item.arxiv_pdf    !== "");
-  const hasGitHub   = !!(item.github       && item.github       !== "");
-  const hasSup      = !!(item.supplemental && item.supplemental !== "");
-
-  const internalTags = ["selected", "peer-reviewed"];
-  const visibleTags  = catsArr.filter(function(c){ return internalTags.indexOf(c) === -1; });
-
-  const isoDate = item.date
-    ? String(item.date)
-    : (item.year ? String(item.year) + "-01-01" : "");
-%>
-
-<%/*
-   metadataAttrs(item) emits all the data-* attributes List.js needs for
-   sort / filter / search. It MUST be on the element that wraps each item.
-*/%>
-<div class="pub-item" <%= metadataAttrs(item) %>>
-
-  <%/* Hidden fields for List.js */%>
-  <span class="listing-title d-none"><%- item.title %></span>
-  <span class="listing-author d-none"><%- item.authors %></span>
-  <span class="listing-date d-none"><%= isoDate %></span>
-
-  <%/*
-     listing-categories: each span's onclick must use utils.b64encode(cat)
-     — required for Quarto >= 1.6.42 where categories are base64-encoded.
-  */%>
-  <div class="listing-categories d-none">
-    <% catsArr.forEach(function(cat) { %>
-    <span class="listing-category"
-          onclick="window.quartoListingCategory('<%= utils.b64encode(cat) %>'); return false;"><%- cat %></span>
-    <% }); %>
-  </div>
-  
-  <%
-  // Bold Jacob's name in the author list
-  const me = "Jacob A. Johnson";
-  const authorsRaw = item.authors || "";
-  const authorsList = authorsRaw.split(/,\s*/);
-
-  const authorsFormatted = authorsList.map(a =>
-    a.trim() === me ? `<strong>${a}</strong>` : a
-  ).join(", ");
-  %>
-
-
-  <%/* ── LINE 1: Citation ───────────────────────────────────────── */%>
-  <p class="pub-citation"><%
-    %><span class="pub-authors"><%= authorsFormatted %></span>. <%
-    if (item.year) { %><span class="pub-year"><%= item.year %></span>. <% } %><%
-    if (item.path && item.path !== "") { %><a href="<%= item.path %>" class="pub-title"><%- item.title %></a><%
-    } else { %><span class="pub-title"><%- item.title %></span><% } %>.<%
-    if (item.journal) { %> <em class="pub-journal"><%- item.journal %></em><%
-      if (volRef) { %> <%- volRef %><% } %>.<%
-    } %><%
-    if (hasDoi) { %> doi: <a href="https://doi.org/<%= item.doi %>" target="_blank" rel="noopener" class="pub-doi"><%= item.doi %></a>.<% } %>
-  </p>
-
-  <%/* ── LINE 2: Links & metric badges ─────────────────────────── */%>
-  <% if (hasDoi || hasPdf || hasPreprint || hasGitHub || hasSup) { %>
-  <p class="pub-links"><%
-    if (hasPdf)      { %><a href="<%= item.pdf %>"          class="pub-btn btn-pdf"          target="_blank" rel="noopener"><i class="bi bi-file-earmark-pdf"></i> PDF</a> <% } %><%
-    if (hasPreprint) { %><a href="<%= item.preprint %>"     class="pub-btn btn-preprint"     target="_blank" rel="noopener"><i class="bi bi-file-earmark-text"></i> Preprint</a> <% } %><% 
-    if (hasArxivAbs) { %><a href="<%= item.arxiv %>"        class="pub-btn btn-preprint"     target="_blank" rel="noopener"><i class="bi bi-file-earmark-text"></i> arXiv</a> <% } %><% 
-    if (hasArxivPdf) { %><a href="<%= item.arxiv_pdf %>"    class="pub-btn btn-pdf"          target="_blank" rel="noopener"><i class="bi bi-file-earmark-pdf"></i> arXiv PDF</a> <% } %><%
-    if (hasGitHub)   { %><a href="<%= item.github %>"       class="pub-btn btn-github"       target="_blank" rel="noopener"><i class="bi bi-github"></i> GitHub</a> <% } %><%
-    if (hasSup)      { %><a href="<%= item.supplemental %>" class="pub-btn btn-supplemental" target="_blank" rel="noopener"><i class="bi bi-paperclip"></i> Supplemental</a> <% } %><%
-    if (hasDoi)      { %><span class="__dimensions_badge_embed__" data-doi="<%= item.doi %>" data-style="large_rectangle" data-hide-zero-citations="true" style="display:inline-flex;vertical-align:middle;"></span> <% } %><%
-    if (hasDoi)      { %><span class="altmetric-embed" data-doi="<%= item.doi %>" data-badge-type="1" data-badge-popover="right" data-hide-no-mentions="true" style="display:inline-flex;vertical-align:middle;"></span><% } %>
-  </p>
-  <% } %>
-
-  <%/* ── LINE 3: Award ──────────────────────────────────────────── */%>
-  <% if (item.awards && item.awards !== "") { %>
-  <p class="pub-awards"><span class="pub-label"><i class="bi bi-trophy"></i> Award:</span> <%- item.awards %></p>
-  <% } %>
-
-  <hr class="pub-divider">
-
-</div>
+<% if (sorted.length === 0) { %>
+  <p class="pub-empty">No publications listed yet.</p>
 <% } %>
 
-</div><%/* end .pub-listing.list */%>
+<% for (const group of groups) { %>
+
+  <% if (showHeadings) { %>
+  <h2 class="pub-section"><%- group.heading %></h2>
+  <% } %>
+
+  <% for (const item of group.papers) { %>
+  <%/* metadataAttrs(item) adds the data-* attributes Quarto's listing
+       JavaScript expects on each item. Keep it on this element. */%>
+  <div class="pub-item" <%= metadataAttrs(item) %>>
+
+    <%/* Hidden copy of the title for Quarto's listing search
+         (unused unless you turn on filter-ui in publications.qmd). */%>
+    <span class="listing-title d-none"><%- item.title %></span>
+
+    <%/* ── Title ─────────────────────────────────────────────────── */%>
+    <<%= titleTag %> class="pub-heading"><%- item.title %></<%= titleTag %>>
+
+    <%/* ── Authors (my name bold) ───────────────────────────────── */%>
+    <p class="pub-authors"><%= formatAuthors(item.authors) %></p>
+
+    <%/* ── Venue line: journal and details on the left, date on the right ── */%>
+    <div class="pub-venue-row">
+      <span class="pub-venue"><%
+        if (has(item.venue)) { %><em><%- item.venue %></em><%
+          const details = venueDetails(item);
+          if (details) { %> <%= details %><% }
+        } else if (has(item.arxiv)) { %><em>arXiv</em>:<%- item.arxiv %><%
+        } else { %><em>Preprint</em><% } %></span>
+      <span class="pub-date"><%- formatDate(item.pubdate) %></span>
+    </div>
+
+    <%/* ── Award (optional) ─────────────────────────────────────── */%>
+    <% if (has(item.award)) { %>
+    <p class="pub-awards"><i class="bi bi-trophy" aria-hidden="true"></i> <%- item.award %></p>
+    <% } %>
+
+    <%/* ── Buttons (only the ones with a link) ───────────────────── */%>
+    <% const buttons = BUTTONS.filter(([field]) => has(item[field])); %>
+    <% if (buttons.length > 0) { %>
+    <p class="pub-links"><%
+      for (const [field, text, colorClass, icon] of buttons) { %><a href="<%- item[field] %>" class="pub-btn <%- colorClass %>" target="_blank" rel="noopener"><i class="bi <%- icon %>" aria-hidden="true"></i> <%- text %></a> <% } %></p>
+    <% } %>
+
+    <%/* ── Abstract (collapsed; click to expand) ──────────────────
+         Uses the built-in <details> element, so no JavaScript is
+         needed. Math like \( n^3 \) is rendered by MathJax. */%>
+    <% if (has(item.abstract)) { %>
+    <details class="pub-abstract">
+      <summary>Abstract</summary>
+      <p><%- item.abstract %></p>
+    </details>
+    <% } %>
+
+    <hr class="pub-divider">
+
+  </div>
+  <% } %>
+
+<% } %>
+
+</div><%/* end .pub-listing */%>
+```

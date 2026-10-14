@@ -1,21 +1,33 @@
 ---
 title: "Projects"
-page-layout: full
-css: files/publications/pub-listing.css
+description-meta: "Course and side projects by Jacob Johnson"
+title-block-banner: false
+
+# Styles: the first file is shared with the Publications and Presentations
+# pages (buttons, dividers, title and date layout, abstract toggle); the
+# second adds the few project-specific pieces.
+css:
+  - files/publications/pub-listing.css
+  - files/projects/project-listing.css
+
+# Publish the reports and other files linked from projects.yml.
+resources:
+  - files/projects/*.pdf
+
+# The page content comes from a Quarto listing:
+#   contents  -> the data (edit this to add projects)
+#   template  -> how each entry is drawn
+listing:
+  - id: projects
+    contents: files/projects/projects.yml
+    type: custom
+    template: files/projects/project-listing.ejs
+    sort: false        # the template sorts newest first
+    page-size: 200     # show everything on one page (no pagination)
 ---
 
-Below are some non-peer-reviewed projects I’ve worked on. Each includes a short description and links to code, documents, etc.
+This is a space for work outside my published research, such as course projects. Each includes a short description and links to code, documents, etc.
 
----
 
-## Functional Labeling of Wisconsin Environments
-Understanding why ecosystems exhibit varying resilience to climate stress is a critical challenge in modern ecology. This study proposes a multi-step latent variable framework to examine modes of ecological vulnerability during the summer 2021 drought in Wisconsin. Utilizing high-resolution satellite imagery data, the proposed model decoupled 10-year historical environmental baselines from acute stress responses. Principal Component Analysis (PCA) condensed static landscape and climate variables, while Confirmatory Factor Analysis (CFA) distilled collinear satellite metrics into two latent axes of stress response. Applying K-means clustering to these reduced dimensions naturally partitioned the state into three geographical vulnerability archetypes.
-
-<a href="https://github.com/jajohnsonstats" class="pub-btn btn-github" target="_blank" rel="noopener">
-  <i class="bi bi-github"></i> Code
-</a> <a href="files/projects/711Project_JacobJohnson.pdf" class="pub-btn btn-pdf" target="_blank" rel="noopener">
-  <i class="bi bi-file-earmark-pdf"></i> PDF
-</a>
-
----
-
+:::{#projects}
+:::

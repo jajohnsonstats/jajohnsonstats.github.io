@@ -1,47 +1,40 @@
-/* ============================================================
-   Publication Listing Styles
-   Place this in your project's custom.css (or a dedicated
-   pub-listing.css and @import it from custom.css).
-   ============================================================ */
+/* =====================================================================
+   pub-listing.css: shared styles for the Publications page, also
+   loaded by the Presentations page (presentations.qmd)
+   ---------------------------------------------------------------------
+   Shared by both pages: entry spacing, dividers, button row, button
+   colors, award line. Change these here and both pages update.
 
-/* ── Container ─────────────────────────────────────────────── */
+   Talk-only styles live in files/presentations/talk-listing.css.
+   The paper title and date column below intentionally use the same
+   values as .talk-title and .talk-event-date there; if you change one,
+   change the other so the pages keep matching.
+   ===================================================================== */
+
+
+/* =====================================================================
+   SHARED (Publications + Presentations)
+   ===================================================================== */
+
+/* ── Container and entries ─────────────────────────────────────── */
 .pub-listing {
   margin-top: 1rem;
 }
 
-/* ── Individual entry ───────────────────────────────────────── */
 .pub-item {
   margin-bottom: 0.5rem;
 }
 
-/* ── Divider ────────────────────────────────────────────────── */
+/* ── Divider between entries ─────────────────────────────────────
+   Full width so it lines up with the right-aligned dates. The extra
+   space above/below separates entries more than lines within one. */
 hr.pub-divider {
-  width: 90%;
-  margin: 0.75rem 0;
+  width: 100%;
+  margin: 1.1rem 0 1.25rem;
   border-color: #dee2e6;
 }
 
-/* ── Line 1 – Citation ──────────────────────────────────────── */
-.pub-citation {
-  margin-bottom: 0.3rem;
-  line-height: 1.55;
-}
-
-.pub-year {
-  font-weight: 400;
-}
-
-.pub-title {
-  font-weight: 600;
-}
-
-.pub-doi {
-/*  font-size: 0.88em; */
-  color: #555;
-  word-break: break-all;
-}
-
-/* ── Line 2 – Links row ─────────────────────────────────────── */
+/* ── Button row ────────────────────────────────────────────────── */
 .pub-links {
   display: flex;
   flex-wrap: wrap;
@@ -69,67 +62,31 @@ hr.pub-divider {
   text-decoration: none;
 }
 
-/* PDF – red */
-.btn-pdf {
-  background-color: #c0392b;
-  opacity: 0.8;
-  color: #fff !important;
-  border: 1px solid #a93226;
+/* Keyboard focus: visible outline for people navigating with Tab */
+.pub-btn:focus-visible {
+  outline: 2px solid #1f4e79;
+  outline-offset: 2px;
 }
 
-/* Preprint – teal */
-.btn-preprint {
-  background-color: #117a8b;
+/* Button colors, named by color. Which button uses which color is set
+   in the BUTTONS lists at the top of pub-listing.ejs and talk-listing.ejs.
+   To recolor a button, change its class there or edit the color here. */
+.btn-red    { background-color: #c0392b; border: 1px solid #a93226; }  /* Slides, Poster    */
+.btn-teal   { background-color: #117a8b; border: 1px solid #0d6370; }  /* Preprint          */
+.btn-blue   { background-color: #007bff; border: 1px solid #0056b3; }  /* Code              */
+.btn-indigo { background-color: #3d3d8f; border: 1px solid #2e2e6e; }  /* Paper             */
+.btn-amber  { background-color: #b45309; border: 1px solid #92400e; }  /* Data              */
+.btn-slate  { background-color: #475569; border: 1px solid #334155; }  /* Supplement, Video */
+
+.btn-red, .btn-teal, .btn-blue, .btn-indigo, .btn-amber, .btn-slate {
   opacity: 0.8;
   color: #fff !important;
-  border: 1px solid #0d6370;
 }
 
-/* SharedIt – green */
-.btn-shareit {
-  background-color: #1e7e34;
-  opacity: 0.8;
-  color: #fff !important;
-  border: 1px solid #196429;
-}
-
-/* GitHub – blue */
-.btn-github {
-  background-color: #007bff;
-  opacity: 0.8;
-  color: #fff !important;
-  border: 1px solid #0056b3;
-}
-
-
-/* Code – indigo */
-.btn-code {
-  background-color: #3d3d8f;
-  opacity: 0.8;
-  color: #fff !important;
-  border: 1px solid #2e2e6e;
-}
-
-/* Data – amber */
-.btn-data {
-  background-color: #b45309;
-  opacity: 0.8;
-  color: #fff !important;
-  border: 1px solid #92400e;
-}
-
-/* Supplemental – slate */
-.btn-supplemental {
-  background-color: #475569;
-  opacity: 0.8;
-  color: #fff !important;
-  border: 1px solid #334155;
-}
-
-/* ── Line 3 – Awards ────────────────────────────────────────── */
+/* ── Award line ────────────────────────────────────────────────── */
 .pub-awards {
   color: #7c4700;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.35rem;
   line-height: 1.45;
 }
 
@@ -137,84 +94,125 @@ hr.pub-divider {
   color: #b45309;
 }
 
-/* ── Line 4 – Media coverage ─────────────────────────────────── */
-.pub-coverage {
-/*  font-size: 0.875rem; */
-  color: #444;
-  margin-bottom: 0.25rem;
-  line-height: 1.45;
+
+/* =====================================================================
+   PUBLICATIONS ONLY
+   ===================================================================== */
+
+/* ── Section headings ("Preprints" / "Peer-reviewed") ─────────────
+   Only appear once there is at least one preprint. */
+.pub-section {
+  font-size: 1.25rem;
+  margin: 1.5rem 0 0.75rem;
 }
 
-/* ── Line 5 – Invited presentations ─────────────────────────── */
-.pub-presentations {
-/*  font-size: 0.875rem; */
-  color: #444;
-  margin-bottom: 0.25rem;
-  line-height: 1.45;
+.pub-listing .pub-section:first-child {
+  margin-top: 0.5rem;
 }
 
-/* Shared label style */
-.pub-label {
+/* ── Paper title ───────────────────────────────────────────────────
+   An <h2>/<h3> for page structure, sized like the talk titles. */
+.pub-heading {
+  font-size: 1rem;
   font-weight: 600;
+  line-height: 1.45;
+  margin: 0 0 0.25rem;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+/* ── Authors ───────────────────────────────────────────────────── */
+.pub-authors {
+  margin: 0 0 0.15rem;
+  line-height: 1.5;
+}
+
+/* My name. Bold by default; add color here if you want it to stand out more. */
+.pub-me {
+  font-weight: 700;
+}
+
+/* ── Venue line: journal on the left, date on the right ────────── */
+.pub-venue-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  column-gap: 1rem;
+  align-items: baseline;
+  margin-bottom: 0.45rem;
+  line-height: 1.5;
+}
+
+.pub-date {
+  color: #555;
+  white-space: nowrap;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── Abstract toggle ───────────────────────────────────────────── */
+.pub-abstract {
+  margin: 0.1rem 0 0;
+}
+
+.pub-abstract summary {
+  display: inline-block;   /* click target is just the word, not the whole row */
+  cursor: pointer;
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.pub-abstract summary:hover {
   color: #222;
 }
 
-/* ── Line 6 – Category tags ──────────────────────────────────── */
-.pub-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.3rem 0.4rem;
-  margin-bottom: 0.25rem;
-  margin-top: 0.1rem;
-}
-
-.pub-tag {
+/* Swap the browser's default marker for a small rotating triangle */
+.pub-abstract summary::-webkit-details-marker { display: none; }
+.pub-abstract summary { list-style: none; }
+.pub-abstract summary::before {
+  content: "\25B8";            /* ▸ */
   display: inline-block;
-  padding: 0.12rem 0.5rem;
-  font-size: 0.75rem;
-  font-weight: 500;
-  border-radius: 3px;
-  border: 1px solid #ced4da;
-  background-color: #f1f3f5;
-  color: #495057;
-  line-height: 1.5;
-  text-transform: capitalize;
+  margin-right: 0.3rem;
+  transition: transform 0.15s ease;
+}
+.pub-abstract[open] summary::before {
+  transform: rotate(90deg);
 }
 
-/* Colour variants for common tags – add more as needed */
-.pub-tag--nature-series  { background-color: #e7f5e7; border-color: #74c69d; color: #1b5e20; }
-.pub-tag--energy-policy  { background-color: #fff3e0; border-color: #ffb74d; color: #7c4700; }
-.pub-tag--climate        { background-color: #e3f2fd; border-color: #64b5f6; color: #0d47a1; }
-.pub-tag--health         { background-color: #fce4ec; border-color: #f48fb1; color: #880e4f; }
-.pub-tag--justice        { background-color: #ede7f6; border-color: #b39ddb; color: #4527a0; }
-.pub-tag--review         { background-color: #e8f4f8; border-color: #81c9e0; color: #01579b; }
-
-/* ── Category sidebar / filter (Quarto-generated list) ────────
-   Quarto appends a <ul class="quarto-listing-category-list">
-   outside the listing div. These rules keep it tidy.          */
-.quarto-listing-category {
-  padding-top: 0.25rem;
+.pub-abstract p {
+  margin: 0.4rem 0 0.25rem;
+  padding-left: 0.75rem;
+  border-left: 3px solid #dee2e6;
+  color: #333;
+  line-height: 1.55;
+  max-width: 75ch;             /* comfortable reading length */
 }
 
-.quarto-listing-category .category {
-  cursor: pointer;
-  font-size: 0.82rem;
-  padding: 0.2rem 0.5rem;
-  border-radius: 4px;
-  transition: background 0.12s ease;
+/* ── Empty state ───────────────────────────────────────────────── */
+.pub-empty {
+  color: #555;
 }
 
-.quarto-listing-category .category:hover,
-.quarto-listing-category .category.active {
-  background-color: #e9ecef;
-  font-weight: 600;
-}
 
-/* ── Responsive tweaks ───────────────────────────────────────── */
+/* =====================================================================
+   SMALL SCREENS
+   ===================================================================== */
 @media (max-width: 600px) {
   .pub-links {
     flex-direction: column;
     align-items: flex-start;
   }
+  .pub-venue-row {
+    grid-template-columns: 1fr;
+  }
+  .pub-date {
+    text-align: left;
+  }
 }
 
+/* Respect the reduced-motion setting */
+@media (prefers-reduced-motion: reduce) {
+  .pub-btn,
+  .pub-abstract summary::before {
+    transition: none;
+  }
+}

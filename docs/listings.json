@@ -2,5 +2,13 @@
   {
     "listing": "/publications.html",
     "items": []
+  },
+  {
+    "listing": "/presentations.html",
+    "items": []
+  },
+  {
+    "listing": "/projects.html",
+    "items": []
   }
 ]

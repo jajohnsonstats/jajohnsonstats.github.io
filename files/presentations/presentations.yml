@@ -1,53 +1,152 @@
-- title: "Fusing Climate Data Products Using a Spatially Varying Autoencoder"
-  type: ["Contributed Talk", "Invited Talk"]
-  events:
-    - event: "JSM 2023"
-      location: "Toronto, ON"
-      date: 2023-08-10
-    - event: "CPMS Student Research Conference"
-      location: "Provo, UT"
-      date: 2023-02-25
-    - event: "JSM 2024"
-      location: "Portland, OR"
-      date: 2024-08-04
-  slides: files/presentations/BYU_overview_slides.pdf
-  paper: https://doi.org/10.1007/s13253-024-00657-3
-  categories: [contributed, invited]
-  
-- title: "Fusing Climate Data Products Using a Spatially Varying Autoencoder"
-  type: "Poster"
-  events:
-    - event: "ENVR Workshop 2022"
-      location: "Provo, UT"
-      date: 2022-10-06
-  paper: https://doi.org/10.1007/s13253-024-00657-3
-  categories: [poster]
-  
-- title: "Minibatch Markov chain Monte Carlo Algorithms for Fitting Gaussian Processes"
-  type: "Contributed Talk"
-  events:
-    - event: "CPMS Student Research Conference"
-      location: "Provo, UT"
-      date: 2024-02-25
-  slides: files/presentations/BYU_overview_slides.pdf
-  paper: https://doi.org/10.1214/24-BA1459
-  categories: [contributed]
-  
-- title: "Minibatch Markov chain Monte Carlo Algorithms for Fitting Gaussian Processes"
-  type: "Poster"
-  events:
-    - event: "ENVR Workshop 2024"
-      location: "Provo, UT"
-      date: 2024-10-04
-  pdf: files/presentations/MiniBatchGP_Poster.pdf
-  paper: https://doi.org/10.1214/24-BA1459
-  categories: [poster]
+# =====================================================================
+# presentations.yml: data for the Presentations page
+# ---------------------------------------------------------------------
+# Rendered by presentations.qmd using files/presentations/talk-listing.ejs
+#
+# ONE ENTRY PER PROJECT (i.e., per talk/poster title). Each time you
+# present that work somewhere, add an item to its `events:` list.
+#
+# Order does not matter. The template sorts projects by their most
+# recent event and lists each project's events newest first.
+#
+# ---------------------------------------------------------------------
+# PROJECT FIELDS
+#   title     required  Title as presented (keep it matching the CV).
+#   summary   optional  One plain-language sentence about the project,
+#                       shown under the title. Omit to hide. Plain text
+#                       (Markdown is NOT converted; simple HTML like
+#                       <em>...</em> works).
+#   events    required  List of events (see EVENT FIELDS below).
+#   slides    optional  Slides file (path in this repo) or URL.
+#   poster    optional  Poster file (path in this repo) or URL.
+#   paper     optional  Published paper. Use the https://doi.org/... URL.
+#   preprint  optional  Preprint, e.g. an arXiv abstract page.
+#   code      optional  Code repository.
+#   video     optional  Recording of the talk.
+#
+# EVENT FIELDS
+#   event     required  Name of the meeting or conference.
+#   location  required  "City, ST", "City, Country", or "Virtual".
+#   date      required  "YYYY-MM-DD" or "YYYY-MM". The page shows only
+#                       month and year, so "YYYY-MM" is fine when you
+#                       don't know the exact day. Keep the quotes.
+#   type      required  invited | contributed | poster | seminar
+#                       (labels are set in talk-listing.ejs; any other
+#                       value is shown exactly as written)
+#   url       optional  Event website. Makes the event name a link.
+#   slides    optional  Use when ONE event had its own slides/poster,
+#   poster    optional  different from the project-level file. Shown as
+#                       a small link at the end of that event's line.
+#
+# Files in files/presentations/ are published automatically (see the
+# `resources:` line in presentations.qmd).
+# =====================================================================
 
-- title: "Modeling Bayesian Transport Map Uncertainty for Non-Gaussian Spatial Data via Laplace Approximation"
-  type: "Contributed Talk"
+
+# ---------------------------------------------------------------------
+# Variational ensemble transport filter
+# ---------------------------------------------------------------------
+- title: "A Variational Ensemble Transport Filter for Nonlinear Data Assimilation"
+  summary: "We propose a framework for nonlinear, uncertainty-aware data assimilation that builds upon Bayesian transport maps with sparse autoregressive Gaussian processes."
   events:
-    - event: "JSM 2025"
-      location: "Nashville, TM"
-      date: 2025-08-05
-  slides: files/presentations/Laplace_slides.pdf
-  categories: [contributed]
+    - event: "JPL Uncertainty Quantification for Remote Sensing Virtual Meeting"
+      location: "Virtual"
+      date: "2026-10-20"
+      type: contributed
+    - event: "ENVR Workshop"
+      location: "Houston, TX"
+      date: "2026-10-09"
+      type: poster
+      url: "https://community.amstat.org/envr/events/workshops/envr2026workshop"
+    - event: "Fall CIRCS IAB Meeting"
+      location: "Madison, WI"
+      date: "2026-10-12"
+      type: poster
+      url: "https://circs.niu.edu/"
+  # slides: files/presentations/
+  poster: files/presentations/NGEnKF/VETF_Poster.pdf
+
+
+# ---------------------------------------------------------------------
+# Subseasonal temperature forecasting (Sandia)
+# ---------------------------------------------------------------------
+- title: "Enhancing Subseasonal Temperature Forecasts via Machine Learning and Nonlinear Dimension Reduction"
+  summary: "We explore how the use of dimension-reduction techniques other than PCA (e.g., autoencoders) affect the performance of machine learning models that predict the average temperature across 5 regions of the contiguous United States at 1–4-week lead times."
+  events:
+    - event: "Joint Statistical Meetings (JSM)"
+      location: "Boston, MA"
+      date: "2026-08-04"
+      type: contributed
+      url: https://ww2.amstat.org/meetings/jsm/2026/
+  slides: files/presentations/Sandia/JSM2026_JacobJohnson.pdf
+  code: "https://github.com/sandialabs/ML-methods-for-weather-forecasting-"
+
+
+# ---------------------------------------------------------------------
+# Laplace approximation for Bayesian transport maps
+# ---------------------------------------------------------------------
+- title: "Modeling Bayesian Transport Map Uncertainty for Non-Gaussian Spatial Data via Laplace Approximation"
+  summary: "This work explores hyperparameter uncertainty when fitting Bayesian transport maps, and suggests using fast Laplace‑approximated hyperparameter posteriors for uncertainty‑aware generative modeling of complex, non‑Gaussian climate fields."
+  events:
+    - event: "Joint Statistical Meetings (JSM)"
+      location: "Nashville, TN"
+      date: "2025-08-05"
+      type: contributed
+      url: https://ww2.amstat.org/meetings/jsm/2025/
+  slides: files/presentations/LaplaceBTM/Laplace_slides.pdf
+
+
+# ---------------------------------------------------------------------
+# Minibatch MCMC for Gaussian processes
+# ---------------------------------------------------------------------
+- title: "Minibatch Markov Chain Monte Carlo Algorithms for Fitting Gaussian Processes"
+  summary: "Minibatch MCMC methods to make Gaussian processes scalable by fitting them using small, computationally cheap subsets of data while preserving full Bayesian inference."
+  events:
+    - event: "ENVR Workshop"
+      location: "Boulder, CO"
+      date: "2024-10-04"
+      type: poster
+      url: https://community.amstat.org/envr/events/workshops/envr2024workshop
+    - event: "CPMS Student Research Conference"
+      location: "Provo, UT"
+      date: "2024-02-25"
+      type: contributed
+      url: https://src.byu.edu/abstract/detail/7478
+  slides: files/presentations/MiniBatchGPs/BYU_overview_slides.pdf
+  poster: files/presentations/MiniBatchGPs/MiniBatchGP_Poster.pdf
+  paper: https://doi.org/10.1214/24-BA1459
+  preprint: https://arxiv.org/abs/2310.17766
+  code: https://github.com/jajohnsonstats/MiniBatchGPs
+  
+  
+# ---------------------------------------------------------------------
+# Spatially varying autoencoder
+# ---------------------------------------------------------------------
+- title: "Climate Data Melding via Spatially Varying Bayesian Autoencoder"
+  summary: "We develop a spatially varying, Bayesian autoencoder that imposes identifiability and interpretability constraints to create a coherent, feature‑preserving consensus across multiple climate data products, when no ground-truth is available."
+  events:
+    - event: "Joint Statistical Meetings (JSM)"
+      location: "Portland, OR"
+      date: "2024-08-04"
+      type: invited
+      url: https://ww2.amstat.org/meetings/jsm/2024/
+    - event: "Joint Statistical Meetings (JSM)"
+      location: "Toronto, ON"
+      date: "2023-08-10"
+      type: contributed
+      url: https://ww2.amstat.org/meetings/jsm/2023/
+    - event: "CPMS Student Research Conference"
+      location: "Provo, UT"
+      date: "2023-02-25"
+      type: contributed
+      url: https://src.byu.edu/abstract/detail/6923
+    - event: "ENVR Workshop"
+      location: "Provo, UT"
+      date: "2022-10-06"
+      type: poster
+      url: https://community.amstat.org/envr/events/workshops/envr2022workshop
+  slides: files/presentations/AE/JSM2024_JacobJohnson.pptx
+  poster: files/presentations/AE/Autoencoder_Poster.pdf
+  paper: https://doi.org/10.1007/s13253-024-00657-3
+  preprint: https://arxiv.org/abs/2403.07822
+  code: https://github.com/jajohnsonstats/Weather-Autoencoder

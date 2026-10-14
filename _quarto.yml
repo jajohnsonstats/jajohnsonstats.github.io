@@ -2,10 +2,9 @@ project:
   type: website
   output-dir: docs
   pre-render:
-    - wsl bash files/resources/update_cv.sh
+    - python files/resources/update_cv.py
     - python files/publications/bib_to_yml.py
-    - python files/publications/merge_pubs.py
-
+    
 author-meta: "Jacob Johnson"
 description-meta: "Jacob Johnson: Statistician and PhD student at UW–Madison"
 
@@ -18,18 +17,12 @@ website:
     background: light  
 
     left:  
-      - text: About
-        href: about.qmd
-      - text: Research
-        menu:
-          - text: Publications  # Automatically generated from publications.bib
-            href: publications.qmd
-          - text: Presentations
-            href: presentations.qmd
-          - text: Projects
-            href: projects.qmd   
-      - text: Contact
-        href: contact.qmd  
+      - text: Publications  # Automatically generated from publications.bib
+        href: publications.qmd
+      - text: Presentations
+        href: presentations.qmd
+      - text: Projects
+        href: projects.qmd
   
     right: 
       - text: CV
@@ -42,7 +35,7 @@ website:
   
   page-footer: 
     left: "[Jacob Johnson](https://github.com/jajohnsonstats/jajohnsonstats.github.io) &copy; <script>document.write(new Date().getFullYear())</script>" 
-    center: "Build on [Quarto Academic Website Template](https://github.com/drganghe/quarto-academic-website-template) adapted by [Dr. Gang He](http://drganghe.github.io)"
+    center: "Built on [Quarto Academic Website Template](https://github.com/drganghe/quarto-academic-website-template)"
     right:  
       - icon: github
         href: https://github.com/jajohnsonstats/jajohnsonstats.github.io

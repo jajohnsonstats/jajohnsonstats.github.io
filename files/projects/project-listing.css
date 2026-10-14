@@ -1,0 +1,15 @@
+/* =====================================================================
+   project-listing.css: styles specific to the Projects page
+   ---------------------------------------------------------------------
+   Load AFTER files/publications/pub-listing.css (see projects.qmd).
+   Almost everything (title, context/date row, buttons, abstract
+   toggle, dividers) comes from pub-listing.css, so the three pages
+   stay consistent. Only the summary paragraph is defined here.
+   ===================================================================== */
+
+/* ── Summary: one or two sentences under the context line ──────── */
+.project-summary {
+  margin: 0 0 0.45rem;
+  line-height: 1.5;
+  max-width: 75ch;   /* comfortable reading length */
+}

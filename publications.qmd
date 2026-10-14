@@ -1,21 +1,26 @@
 ---
 title: "Publications"
-description-meta: "My papers and publications"
+description-meta: "Papers and preprints by Jacob Johnson"
 title-block-banner: false
-css: files/publications/pub-listing.css
-filters: [files/publications/remove-stray-divfence.lua]
+
+# Shared styles for the Publications and Presentations pages.
+css:
+  - files/publications/pub-listing.css
+
+# The page content comes from a Quarto listing:
+#   contents  -> the data. GENERATED from files/CV/publications.bib by
+#                files/publications/bib_to_yml.py before every render.
+#                To add or change a paper, edit the .bib, not this YAML.
+#   template  -> how each entry is drawn
 listing:
   - id: pubs
     contents: files/publications/publications.yml
     type: custom
-    page-size: 200
     template: files/publications/pub-listing.ejs
-    filter-ui: 
-      - search
-      - year
+    sort: false        # the template sorts newest first
+    page-size: 200     # show everything on one page (no pagination)
 ---
 
-{{< include /files/includes/_academic.qmd >}}
-
+<!-- The listing is inserted into this empty block. -->
 :::{#pubs}
 :::

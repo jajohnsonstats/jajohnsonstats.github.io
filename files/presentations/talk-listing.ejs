@@ -1,0 +1,198 @@
+<%
+/* =====================================================================
+   talk-listing.ejs: Quarto custom listing template for the
+   Presentations page
+   ---------------------------------------------------------------------
+   Data:   files/presentations/presentations.yml (one entry per project)
+   Page:   presentations.qmd
+   Styles: files/publications/pub-listing.css (shared with Publications)
+           files/presentations/talk-listing.css (talk-specific additions)
+
+   Layout of each project:
+     Title
+     Summary (optional)
+     Event, Location   [type label]   [event file link]         Month Year
+     Event, Location   [type label]                             Month Year
+     [Slides] [Poster] [Paper] [Preprint] [Code] [Video]
+     ---------------------------------------------------------------
+
+   This template reuses class names from the publications template
+   (pub-item, pub-links, pub-btn, btn-*, pub-divider) so both pages
+   look the same. Change a button color in pub-listing.css and it
+   changes on both pages.
+
+   Note: EJS runs when Quarto renders the site, not in the visitor's
+   browser. Anything computed here (like sorting) is fixed until the
+   next render.
+
+   Output tags (Quarto's template engine; opposite of plain EJS!):
+     the <%- tag writes a value as ESCAPED text  (safe for titles, URLs)
+     the <%= tag writes a value as RAW HTML      (lets simple HTML through)
+   ===================================================================== */
+
+
+/* ---------------------------------------------------------------------
+   SETTINGS: things you are most likely to want to change
+   --------------------------------------------------------------------- */
+
+// Label shown for each event `type` in presentations.yml.
+// The key is what you write in the YAML; the value is what the page shows.
+// Any type not listed here is shown exactly as written in the YAML.
+const TYPE_LABELS = {
+  invited:     "Invited talk",
+  contributed: "Contributed talk",
+  poster:      "Poster",
+  seminar:     "Seminar"
+};
+
+// Month names used for dates. Short months are spelled out and longer
+// ones abbreviated, the same convention as the CV.
+const MONTHS = ["Jan", "Feb", "March", "April", "May", "June",
+                "July", "Aug", "Sept", "Oct", "Nov", "Dec"];
+
+// Project-level buttons, in the order they appear on the page.
+// Each row: [YAML field, button text, button color class, Bootstrap icon]
+// Color classes are defined in files/publications/pub-listing.css.
+// Icons: https://icons.getbootstrap.com/
+const BUTTONS = [
+  ["slides",     "Slides",     "btn-red",    "bi-file-earmark-slides"],
+  ["poster",     "Poster",     "btn-red",    "bi-window-fullscreen"],
+  ["paper",      "Paper",      "btn-indigo", "bi-journal-text"],
+  ["preprint",   "Preprint",   "btn-teal",   "bi-file-earmark-text"],
+  ["code",       "Code",       "btn-blue",   "bi-github"],
+  ["video",      "Video",      "btn-slate",  "bi-play-btn"]
+];
+
+// Per-event file links (shown at the end of an event's line).
+// Each row: [YAML field, link text]
+const EVENT_FILES = [
+  ["slides", "Slides"],
+  ["poster", "Poster"]
+];
+
+
+/* ---------------------------------------------------------------------
+   HELPERS
+   --------------------------------------------------------------------- */
+
+// True if a field is present and not empty.
+const has = (v) => v !== undefined && v !== null && String(v).trim() !== "";
+
+// Dates arrive as strings when quoted in the YAML ("2024-08-04") but may
+// arrive as Date objects if unquoted. Normalize both to "YYYY-MM-DD"/"YYYY-MM".
+const dateString = (d) =>
+  d instanceof Date ? d.toISOString().slice(0, 10) : String(d || "").trim();
+
+// Turn a date into a sortable number:
+//   "2024-08-04" -> 20240804,  "2024-08" -> 20240800,  missing/invalid -> 0
+// (Parsing the text directly avoids time-zone shifts from new Date().)
+const dateKey = (d) => {
+  const m = dateString(d).match(/^(\d{4})-(\d{1,2})(?:-(\d{1,2}))?/);
+  return m ? Number(m[1]) * 10000 + Number(m[2]) * 100 + Number(m[3] || 0) : 0;
+};
+
+// Display format: "Aug 2024". Falls back to the raw text if it can't parse.
+const formatDate = (d) => {
+  const m = dateString(d).match(/^(\d{4})-(\d{1,2})/);
+  return m ? MONTHS[Number(m[2]) - 1] + " " + m[1] : dateString(d);
+};
+
+// Label and CSS-safe class suffix for an event type.
+const typeLabel = (t) => TYPE_LABELS[String(t || "").toLowerCase()] || String(t || "");
+const typeClass = (t) => String(t || "other").toLowerCase().replace(/[^a-z0-9]+/g, "-");
+
+
+/* ---------------------------------------------------------------------
+   SORTING
+   Events: newest first within each project.
+   Projects: by their most recent event, newest first.
+   (presentations.qmd sets `sort: false` so Quarto doesn't re-sort.)
+   --------------------------------------------------------------------- */
+const projects = items
+  .map((item) => {
+    const events = (item.events || [])
+      .slice()
+      .sort((a, b) => dateKey(b.date) - dateKey(a.date));
+    return { item: item, events: events, latest: events.length ? dateKey(events[0].date) : 0 };
+  })
+  .sort((a, b) => b.latest - a.latest);
+%>
+
+<%/* Raw HTML fence: Quarto inserts this template's output into the page
+     as Markdown, and Pandoc would otherwise re-parse the HTML (indented
+     lines and blank lines get turned into stray <p> tags and break the
+     layout). Everything between ```{=html} and ``` is passed through
+     untouched. Keep both fence lines, and keep them at the very start
+     of a line with nothing else on it. */%>
+```{=html}
+<%/* Outer wrapper. The "list" class is required by Quarto's listing
+     JavaScript (List.js), the same as in the publications template. */%>
+<div class="pub-listing talk-listing list">
+
+<% if (projects.length === 0) { %>
+  <p class="talk-empty">No presentations listed yet.</p>
+<% } %>
+
+<% for (const p of projects) {
+     const item = p.item;
+%>
+<%/* metadataAttrs(item) adds the data-* attributes Quarto's listing
+     JavaScript expects on each item. Keep it on this element. */%>
+<div class="pub-item talk-item" <%= metadataAttrs(item) %>>
+
+  <%/* Hidden copy of the title for Quarto's listing search (unused unless
+       you turn on filter-ui in presentations.qmd). */%>
+  <span class="listing-title d-none"><%- item.title %></span>
+
+  <%/* ── Title ───────────────────────────────────────────────────── */%>
+  <h2 class="talk-title"><%- item.title %></h2>
+
+  <%/* ── Summary (optional) ─────────────────────────────────────── */%>
+  <% if (has(item.summary)) { %>
+  <p class="talk-summary"><%= item.summary %></p>
+  <% } %>
+
+  <%/* ── Events: one line each ───────────────────────────────────── */%>
+  <ul class="talk-events">
+  <% for (const ev of p.events) { %>
+    <li class="talk-event">
+      <span class="talk-event-main">
+        <%/* Event name (linked if `url` is given) and location */%>
+        <span class="talk-event-venue"><%
+          if (has(ev.url)) { %><a href="<%- ev.url %>" target="_blank" rel="noopener"><%- ev.event %></a><%
+          } else { %><%- ev.event %><% }
+          if (has(ev.location)) { %>, <%- ev.location %><% } %></span>
+
+        <%/* Type label, e.g. "Invited talk" */%>
+        <% if (has(ev.type)) { %>
+        <span class="talk-type talk-type--<%- typeClass(ev.type) %>"><%- typeLabel(ev.type) %></span>
+        <% } %>
+
+        <%/* Event-specific files, if any */%>
+        <% for (const [field, text] of EVENT_FILES) {
+             if (has(ev[field])) { %>
+        <a class="talk-event-file" href="<%- ev[field] %>" target="_blank" rel="noopener"><%- text %></a>
+        <%   }
+           } %>
+      </span>
+
+      <%/* Date, right-aligned like the CV */%>
+      <span class="talk-event-date"><%- formatDate(ev.date) %></span>
+    </li>
+  <% } %>
+  </ul>
+
+  <%/* ── Buttons (only the ones with a link in the YAML) ─────────── */%>
+  <% const buttons = BUTTONS.filter(([field]) => has(item[field])); %>
+  <% if (buttons.length > 0) { %>
+  <p class="pub-links"><%
+    for (const [field, text, colorClass, icon] of buttons) { %><a href="<%- item[field] %>" class="pub-btn <%- colorClass %>" target="_blank" rel="noopener"><i class="bi <%- icon %>" aria-hidden="true"></i> <%- text %></a> <% } %></p>
+  <% } %>
+
+  <hr class="pub-divider">
+
+</div>
+<% } %>
+
+</div><%/* end .talk-listing */%>
+```

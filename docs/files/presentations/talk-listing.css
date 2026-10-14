@@ -1,0 +1,114 @@
+/* =====================================================================
+   talk-listing.css: styles specific to the Presentations page
+   ---------------------------------------------------------------------
+   Load AFTER files/publications/pub-listing.css (see presentations.qmd).
+   Shared pieces (buttons, dividers and the spacing between entries,
+   award line) come from pub-listing.css, so edit those there to change
+   both pages at once.
+   ===================================================================== */
+
+/* ── Title ─────────────────────────────────────────────────────────
+   An <h2> for page structure and screen readers, but sized and
+   weighted like a publication title (.pub-title) so the pages match. */
+.talk-title {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.45;
+  margin: 0 0 0.3rem;
+  border-bottom: none;   /* some Quarto themes underline h2 */
+  padding-bottom: 0;
+}
+
+/* ── Optional one-sentence summary ─────────────────────────────── */
+.talk-summary {
+  color: #444;
+  margin: 0 0 0.35rem;
+  line-height: 1.5;
+}
+
+/* ── Event list ───────────────────────────────────────────────────
+   Each event is one row: details on the left, date on the right,
+   the same arrangement as the CV. */
+.talk-events {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0.45rem;
+}
+
+.talk-event {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;  /* details | date */
+  column-gap: 1rem;
+  align-items: baseline;
+  padding: 0.1rem 0;
+  line-height: 1.5;
+}
+
+/* Event name and location: italic, like the venue line on the CV */
+.talk-event-venue {
+  font-style: italic;
+  margin-right: 0.4rem;
+}
+
+/* Date column: muted, never wraps, digits line up */
+.talk-event-date {
+  color: #555;
+  white-space: nowrap;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── Type label (Invited talk / Contributed talk / Poster) ────────
+   Small outlined label. The class suffix comes from the YAML `type`
+   value, e.g. talk-type--invited. Add a rule below for a new type. */
+.talk-type {
+  display: inline-block;
+  padding: 0 0.45rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.55;
+  border: 1px solid #ced4da;
+  border-radius: 3px;
+  background-color: #f1f3f5;
+  color: #495057;
+  vertical-align: 0.08em;
+  white-space: nowrap;
+}
+
+/* Invited talks get the same amber used for awards on the
+   Publications page, since being invited is the notable thing. */
+.talk-type--invited {
+  background-color: #fff3e0;
+  border-color: #ffb74d;
+  color: #7c4700;
+}
+
+/* Posters: a cool tint to tell them apart from talks at a glance */
+.talk-type--poster {
+  background-color: #e8f4f8;
+  border-color: #81c9e0;
+  color: #01579b;
+}
+
+/* ── Per-event file link (only when an event has its own file) ─── */
+.talk-event-file {
+  font-size: 0.85rem;
+  margin-left: 0.35rem;
+  white-space: nowrap;
+}
+
+/* ── Empty state ───────────────────────────────────────────────── */
+.talk-empty {
+  color: #555;
+}
+
+/* ── Small screens: stack the date under the event details ─────── */
+@media (max-width: 600px) {
+  .talk-event {
+    grid-template-columns: 1fr;
+    margin-bottom: 0.3rem;
+  }
+  .talk-event-date {
+    text-align: left;
+  }
+}

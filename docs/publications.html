@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
+<meta name="generator" content="quarto-1.9.38">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Jacob Johnson">
-<meta name="description" content="My papers and publications">
+<meta name="description" content="Papers and preprints by Jacob Johnson">
 
 <title>Publications – Jacob Johnson</title>
 <style>
@@ -43,7 +43,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-31eaf266902e15e6572a3934ae2616ee.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
@@ -83,9 +83,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-title','listing-authors','listing-year','listing-journal','listing-doi','listing-abstract','listing-url','listing-arxiv_id','listing-arxiv','listing-arxiv_pdf','listing-github','listing-categories','listing-testing','listing-awards',{ data: ['index'] },{ data: ['categories'] }],
+      valueNames: ['listing-key','listing-title','listing-authors','listing-venue','listing-volume','listing-issue','listing-pages','listing-pubdate','listing-status','listing-arxiv','listing-paper','listing-preprint','listing-abstract','listing-code','listing-slides','listing-poster','listing-award',{ data: ['index'] },{ data: ['categories'] }],
       
-      searchColumns: ["listing-search","listing-year"],
+      searchColumns: ["listing-key","listing-title","listing-authors","listing-venue","listing-volume","listing-issue","listing-pages","listing-pubdate","listing-status","listing-arxiv","listing-paper","listing-preprint","listing-abstract","listing-code","listing-slides","listing-poster","listing-award"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -194,31 +194,16 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
-<span class="menu-text">About</span></a>
+    <a class="nav-link active" href="./publications.html" aria-current="page"> 
+<span class="menu-text">Publications</span></a>
   </li>  
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-research" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Research</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-research">    
-        <li>
-    <a class="dropdown-item" href="./publications.html">
- <span class="dropdown-text">Publications</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./presentations.html">
- <span class="dropdown-text">Presentations</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./projects.html">
- <span class="dropdown-text">Projects</span></a>
-  </li>  
-    </ul>
-  </li>
   <li class="nav-item">
-    <a class="nav-link" href="./contact.html"> 
-<span class="menu-text">Contact</span></a>
+    <a class="nav-link" href="./presentations.html"> 
+<span class="menu-text">Presentations</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./projects.html"> 
+<span class="menu-text">Projects</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
@@ -267,72 +252,103 @@ window.Quarto = {
 </header>
 
 
-<!-- 
-Load Academicons v1: https://jpswalsh.github.io/academicons/
--->
-<p><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"></p>
-<p><link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"></p>
-<!---
-The following code are needed to show dimension citation and altmetrics.
-https://api.altmetric.com/embeds.html
-https://badge.dimensions.ai/
---->
-<script type="text/javascript" src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script>
-<script async="" src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script>
-<script type="text/javascript" src="//cdn.plu.mx/widget-popup.js"></script>
+<!-- The listing is inserted into this empty block. -->
 <div id="listing-pubs" class="quarto-listing quarto-listing-container-custom">
-<div class="listing-actions-group">
-    <div class="input-group input-group-sm quarto-listing-filter">
-      <span class="input-group-text"><i class="bi bi-search"></i></span>
-      <input type="text" class="search form-control" placeholder="Filter">
-    </div>
-</div>
-<div class="pub-listing list">
-<div class="pub-item" data-index="0" data-categories="cGVlci1yZXZpZXdlZA==">
-<p><span class="listing-title d-none">Minibatch Markov Chain Monte Carlo Algorithms for Fitting Gaussian Processes</span> <span class="listing-author d-none">Matthew J. Heaton, Jacob A. Johnson</span> <span class="listing-date d-none">2024-01-01</span></p>
-<div class="listing-categories d-none">
-<pre><code>&lt;span class="listing-category"
-      onclick="window.quartoListingCategory('cGVlci1yZXZpZXdlZA=='); return false;"&gt;peer-reviewed&lt;/span&gt;</code></pre>
-</div>
-<p class="pub-citation">
-<span class="pub-authors">Matthew J. Heaton, <strong>Jacob A. Johnson</strong></span>. <span class="pub-year">2024</span>. <span class="pub-title">Minibatch Markov Chain Monte Carlo Algorithms for Fitting Gaussian Processes</span>. <em class="pub-journal">Bayesian Analysis</em>. doi: <a href="https://doi.org/10.1214/24-BA1459" target="_blank" rel="noopener" class="pub-doi">10.1214/24-BA1459</a>.
-</p>
-<p class="pub-links">
-<a href="https://arxiv.org/abs/2310.17766" class="pub-btn btn-preprint" target="_blank" rel="noopener"><i class="bi bi-file-earmark-text"></i> arXiv</a> <a href="https://arxiv.org/pdf/2310.17766" class="pub-btn btn-pdf" target="_blank" rel="noopener"><i class="bi bi-file-earmark-pdf"></i> arXiv PDF</a> <a href="https://github.com/jajohnsonstats/MiniBatchGPs" class="pub-btn btn-github" target="_blank" rel="noopener"><i class="bi bi-github"></i> GitHub</a> <span class="__dimensions_badge_embed__" data-doi="10.1214/24-BA1459" data-style="large_rectangle" data-hide-zero-citations="true" style="display:inline-flex;vertical-align:middle;"></span> <span class="altmetric-embed" data-doi="10.1214/24-BA1459" data-badge-type="1" data-badge-popover="right" data-hide-no-mentions="true" style="display:inline-flex;vertical-align:middle;"></span>
-</p>
-<hr class="pub-divider">
-</div>
-<div class="pub-item" data-index="1" data-categories="cGVlci1yZXZpZXdlZCUyQ2F3YXJk">
-<p><span class="listing-title d-none">Fusing Climate Data Products Using a Spatially Varying Autoencoder</span> <span class="listing-author d-none">Jacob A. Johnson, Matthew J. Heaton, William F. Christensen, Lynsie R. Warr, Summer B. Rupper</span> <span class="listing-date d-none">2024-01-01</span></p>
-<div class="listing-categories d-none">
-<pre><code>&lt;span class="listing-category"
-      onclick="window.quartoListingCategory('cGVlci1yZXZpZXdlZA=='); return false;"&gt;peer-reviewed&lt;/span&gt;
 
-&lt;span class="listing-category"
-      onclick="window.quartoListingCategory('YXdhcmQ='); return false;"&gt;award&lt;/span&gt;</code></pre>
-</div>
-<p class="pub-citation">
-<span class="pub-authors"><strong>Jacob A. Johnson</strong>, Matthew J. Heaton, William F. Christensen, Lynsie R. Warr, Summer B. Rupper</span>. <span class="pub-year">2024</span>. <span class="pub-title">Fusing Climate Data Products Using a Spatially Varying Autoencoder</span>. <em class="pub-journal">Journal of Agricultural, Biological and Environmental Statistics</em>. doi: <a href="https://doi.org/10.1007/s13253-024-00657-3" target="_blank" rel="noopener" class="pub-doi">10.1007/s13253-024-00657-3</a>.
-</p>
-<p class="pub-links">
-<a href="https://arxiv.org/abs/2403.07822" class="pub-btn btn-preprint" target="_blank" rel="noopener"><i class="bi bi-file-earmark-text"></i> arXiv</a> <a href="https://arxiv.org/pdf/2403.07822" class="pub-btn btn-pdf" target="_blank" rel="noopener"><i class="bi bi-file-earmark-pdf"></i> arXiv PDF</a> <a href="https://github.com/jajohnsonstats/Weather-Autoencoder" class="pub-btn btn-github" target="_blank" rel="noopener"><i class="bi bi-github"></i> GitHub</a> <span class="__dimensions_badge_embed__" data-doi="10.1007/s13253-024-00657-3" data-style="large_rectangle" data-hide-zero-citations="true" style="display:inline-flex;vertical-align:middle;"></span> <span class="altmetric-embed" data-doi="10.1007/s13253-024-00657-3" data-badge-type="1" data-badge-popover="right" data-hide-no-mentions="true" style="display:inline-flex;vertical-align:middle;"></span>
-</p>
-<p class="pub-awards">
-<span class="pub-label"><i class="bi bi-trophy"></i> Award:</span> 2024 ENVR Student Paper Competition Winner
-</p>
-<hr class="pub-divider">
-</div>
+<div class="pub-listing list">
+
+  
+
+  
+  
+  <div class="pub-item" data-index="0">
+
+    
+    <span class="listing-title d-none">Fusing Climate Data Products Using a Spatially Varying Autoencoder</span>
+
+    
+    <h2 class="pub-heading anchored">Fusing Climate Data Products Using a Spatially Varying Autoencoder</h2>
+
+    
+    <p class="pub-authors"><strong class="pub-me">Jacob A. Johnson</strong>, Matthew J. Heaton, William F. Christensen, Lynsie R. Warr, and Summer B. Rupper</p>
+
+    
+    <div class="pub-venue-row">
+      <span class="pub-venue"><em>Journal of Agricultural, Biological and Environmental Statistics</em> 31(2), 273–286</span>
+      <span class="pub-date">June 2026</span>
+    </div>
+
+    
+    
+    <p class="pub-awards"><i class="bi bi-trophy" aria-hidden="true"></i> Winner, 2024 ASA Section on Statistics and the Environment Student Paper Competition</p>
+    
+
+    
+    
+    
+    <p class="pub-links"><a href="https://doi.org/10.1007/s13253-024-00657-3" class="pub-btn btn-indigo" target="_blank" rel="noopener"><i class="bi bi-journal-text" aria-hidden="true"></i> Paper</a> <a href="https://arxiv.org/abs/2403.07822" class="pub-btn btn-teal" target="_blank" rel="noopener"><i class="bi bi-file-earmark-text" aria-hidden="true"></i> Preprint</a> <a href="https://github.com/jajohnsonstats/Weather-Autoencoder" class="pub-btn btn-blue" target="_blank" rel="noopener"><i class="bi bi-github" aria-hidden="true"></i> Code</a> <a href="files/presentations/AE/JSM2024_JacobJohnson.pptx" class="pub-btn btn-red" target="_blank" rel="noopener"><i class="bi bi-file-earmark-slides" aria-hidden="true"></i> Slides</a> <a href="files/presentations/AE/Autoencoder_Poster.pdf" class="pub-btn btn-red" target="_blank" rel="noopener"><i class="bi bi-window-fullscreen" aria-hidden="true"></i> Poster</a> </p>
+    
+
+    
+    
+    <details class="pub-abstract">
+      <summary>Abstract</summary>
+      <p>Autoencoders are powerful machine learning models used to compress information from multiple data sources. However, autoencoders, like all artificial neural networks, are often unidentifiable and uninterpretable. This research focuses on creating an identifiable and interpretable autoencoder that can be used to meld and combine climate data products. The proposed autoencoder utilizes a Bayesian statistical framework, allowing for probabilistic interpretations while also varying spatially to capture useful spatial patterns across the various data products. Constraints are placed on the autoencoder as it learns patterns in the data, creating an interpretable consensus that includes the important features from each input. We demonstrate the utility of the autoencoder by combining information from multiple precipitation products in High Mountain Asia.</p>
+    </details>
+    
+
+    <hr class="pub-divider">
+
+  </div>
+  
+  
+  <div class="pub-item" data-index="1">
+
+    
+    <span class="listing-title d-none">Minibatch Markov Chain Monte Carlo Algorithms for Fitting Gaussian Processes</span>
+
+    
+    <h2 class="pub-heading anchored">Minibatch Markov Chain Monte Carlo Algorithms for Fitting Gaussian Processes</h2>
+
+    
+    <p class="pub-authors">Matthew J. Heaton and <strong class="pub-me">Jacob A. Johnson</strong></p>
+
+    
+    <div class="pub-venue-row">
+      <span class="pub-venue"><em>Bayesian Analysis</em> 21(1), 21–43</span>
+      <span class="pub-date">March 2026</span>
+    </div>
+
+    
+    
+
+    
+    
+    
+    <p class="pub-links"><a href="https://doi.org/10.1214/24-BA1459" class="pub-btn btn-indigo" target="_blank" rel="noopener"><i class="bi bi-journal-text" aria-hidden="true"></i> Paper</a> <a href="https://arxiv.org/abs/2310.17766" class="pub-btn btn-teal" target="_blank" rel="noopener"><i class="bi bi-file-earmark-text" aria-hidden="true"></i> Preprint</a> <a href="https://github.com/jajohnsonstats/MiniBatchGPs" class="pub-btn btn-blue" target="_blank" rel="noopener"><i class="bi bi-github" aria-hidden="true"></i> Code</a> <a href="files/presentations/MiniBatchGPs/BYU_overview_slides.pdf" class="pub-btn btn-red" target="_blank" rel="noopener"><i class="bi bi-file-earmark-slides" aria-hidden="true"></i> Slides</a> <a href="files/presentations/MiniBatchGPs/MiniBatchGP_Poster.pdf" class="pub-btn btn-red" target="_blank" rel="noopener"><i class="bi bi-window-fullscreen" aria-hidden="true"></i> Poster</a> </p>
+    
+
+    
+    
+    <details class="pub-abstract">
+      <summary>Abstract</summary>
+      <p>Gaussian processes (GPs) are a highly flexible, nonparametric statistical model that are commonly used to fit nonlinear relationships or account for correlation between observations. However, the computational load of fitting a Gaussian process is \(\mathcal{O}(n^3)\) making them infeasible for use on large datasets. To make GPs more feasible for large datasets, this research focuses on the use of minibatching to estimate GP parameters. Specifically, we outline both approximate and exact minibatch Markov chain Monte Carlo algorithms that substantially reduce the computation of fitting a GP by only considering small subsets of the data at a time. We demonstrate and compare this methodology using various simulations and real datasets.</p>
+    </details>
+    
+
+    <hr class="pub-divider">
+
+  </div>
+  
+
 </div>
 <div class="listing-no-matching d-none">No matching items</div>
-
 </div>
 
 
-</main></div>
 
 
-
- <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -738,7 +754,7 @@ https://badge.dimensions.ai/
     }
   });
   </script>
- <!-- /content -->
+</div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
@@ -746,7 +762,7 @@ https://badge.dimensions.ai/
 <script>document.write(new Date().getFullYear())</script>
 </div>   
     <div class="nav-footer-center">
-<p>Build on <a href="https://github.com/drganghe/quarto-academic-website-template">Quarto Academic Website Template</a> adapted by <a href="http://drganghe.github.io">Dr.&nbsp;Gang He</a></p>
+<p>Built on <a href="https://github.com/drganghe/quarto-academic-website-template">Quarto Academic Website Template</a></p>
 </div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">

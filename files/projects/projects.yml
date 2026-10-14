@@ -1,0 +1,63 @@
+# =====================================================================
+# projects.yml: data for the Projects page (projects.qmd)
+# ---------------------------------------------------------------------
+# Rendered by projects.qmd using files/projects/project-listing.ejs.
+# For work that isn't a paper or a talk: course projects, side
+# projects, software, reports. One entry per project.
+#
+# Order does not matter. The template lists the newest first; projects
+# without a date go at the end.
+#
+# FIELDS
+#   title      required  Project name.
+#   context    optional  Where it came from, e.g. "Course project,
+#                        STAT 711, UW–Madison" or "Personal project".
+#   when       optional  When you did it: "YYYY-MM" or "YYYY-MM-DD"
+#                        (shown as month and year), or just "YYYY".
+#                        Keep the quotes. (Named `when`, not `date`,
+#                        because Quarto rewrites a field called `date`.)
+#   summary    optional  One or two plain-language sentences, always
+#                        visible. Simple HTML like <em>...</em> works.
+#   abstract   optional  Longer description, hidden behind an
+#                        "Abstract" toggle (same as on Publications).
+#                        Math in \( ... \) is rendered.
+#
+#   Buttons (each appears only if filled in; same colors and icons as
+#   the Publications and Presentations pages):
+#   report     Written report or paper (PDF path in this repo, or URL)
+#   code       Code repository
+#   slides     Slides
+#   poster     Poster
+#   data       Dataset
+#   website    Project website or app
+#
+# Files in files/projects/ are published automatically (see the
+# `resources:` line in projects.qmd).
+# =====================================================================
+
+
+# ---------------------------------------------------------------------
+# Wisconsin drought vulnerability
+# ---------------------------------------------------------------------
+- title: "Functional Labeling of Wisconsin Environments"
+  context: "FWE 711 Course project"
+  when: "2025-05"
+  summary: >-
+    A latent-variable framework that uses satellite imagery to group
+    Wisconsin landscapes by how they responded to the 2021 summer drought.
+  abstract: >-
+    Understanding why ecosystems exhibit varying resilience to climate
+    stress is a critical challenge in modern ecology. This study proposes
+    a multi-step latent variable framework to examine modes of ecological
+    vulnerability during the summer 2021 drought in Wisconsin. Utilizing
+    high-resolution satellite imagery data, the proposed model decoupled
+    10-year historical environmental baselines from acute stress
+    responses. Principal Component Analysis (PCA) condensed static
+    landscape and climate variables, while Confirmatory Factor Analysis
+    (CFA) distilled collinear satellite metrics into two latent axes of
+    stress response. Applying K-means clustering to these reduced
+    dimensions naturally partitioned the state into three geographical
+    vulnerability archetypes.
+  report: files/projects/711Project_JacobJohnson.pdf
+  slides: files/projects/711Project_Slides.html
+  # code: https://github.com/jajohnsonstats/...   # TODO: link the repo itself, not your profile

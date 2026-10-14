@@ -12,12 +12,12 @@ about:
   template: trestles
   image-width: 70%
   links:
+    - icon: envelope
+      text: Email
+      href: mailto:jajohnsonstats@gmail.com 
     - text: "{{< ai google-scholar >}} Google Scholar"
       href: https://scholar.google.com/citations?user=dbN-_3QAAAAJ&hl=en
-      target: _blank
-    - icon: envelope
-      text: E-mail
-      href: mailto:jajohnsonstats@gmail.com   
+      target: _blank  
     - icon: github
       text: GitHub 
       href: https://github.com/jajohnsonstats
@@ -29,17 +29,22 @@ about:
     - text: "{{< ai orcid >}} ORCID"   
       href: https://orcid.org/0009-0002-3797-0812
       target: _blank
-    - icon: sun
-      text: Katzfuss Group
+    - icon: people
+      text: Katzfuß Group
       href: https://sites.google.com/view/katzfuss/group
       target: _blank
 ---
 
 :::{#hero-heading}
 
-I'm a second year PhD student at the [University of Wisconsin–Madison](https://stat.wisc.edu/) working with [Dr. Matthias Katzfuß](https://sites.google.com/view/katzfuss/home). I am also a year-round statistics intern at [Sandia National Laboratories](https://www.sandia.gov/) working with [Dr. Katherine Goode](https://goodekat.github.io/).  
-My research is focused on finding new methods in Spatial Statistics, Gaussian Processes, and Uncertainty Quantification, specifically with applications in climate and environmental science.
+I'm a third-year PhD student at the [University of Wisconsin–Madison](https://stat.wisc.edu/) working with [Dr. Matthias Katzfuß](https://sites.google.com/view/katzfuss/home). 
+My research is focused on finding new methods in spatial statistics, Gaussian processes, and uncertainty quantification, specifically with applications in climate and environmental science. Currently, I am working on state-space models involving non-Gaussian forecasts.
 
-You can find my publications on my [CV](files/CV/JacobJohnsonCV.pdf) or [Google Scholar](https://scholar.google.com/citations?user=dbN-_3QAAAAJ&hl=en) profile. 
+Before starting my PhD, I got a Bachelor's degree from [Brigham Young University](https://statistics.byu.edu/) where I did research with [Dr. Matthew Heaton](https://mheaton.byu.edu/). 
+I recently completed a year-round statistics internship at [Sandia National Laboratories](https://www.sandia.gov/) where I worked with [Dr. Katherine Goode](https://goodekat.github.io/).
+I'm originally from Lindon, Utah, and my hobbies include watching college sports, camping, hiking, and spending time with my family. 
+
+You can find my [publications](publications.qmd), [talks](presentations.qmd), and [CV](files/CV/JacobJohnsonCV.pdf)
+on this site. The best way to reach me is by email at <jajohnsonstats@gmail.com>.
 
 :::

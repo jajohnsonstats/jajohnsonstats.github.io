@@ -6,7 +6,7 @@ css:
   - files/publications/pub-listing.css
   - files/presentations/talk-listing.css
 resources:
-  - files/presentations/*.pdf
+  - files/presentations/**/*.pdf
 listing:
   - id: talks
     contents: files/presentations/presentations.yml

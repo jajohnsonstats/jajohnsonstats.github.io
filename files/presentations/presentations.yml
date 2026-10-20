@@ -63,7 +63,7 @@
       date: "2026-10-12"
       type: poster
       url: "https://circs.niu.edu/"
-  # slides: files/presentations/
+  slides: files/presentations/NGEnKL/jpl_talk.pdf
   poster: files/presentations/NGEnKF/VETF_Poster.pdf
 
 

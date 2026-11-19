@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.38">
+<meta name="generator" content="quarto-1.10.19">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -14,10 +14,13 @@
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -43,10 +46,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-31eaf266902e15e6572a3934ae2616ee.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-f0f4b58164ec92a07fcd2db94b0e5cbd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -83,9 +86,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-title','listing-context','listing-when','listing-summary','listing-abstract','listing-report','listing-slides',{ data: ['index'] },{ data: ['categories'] }],
+      valueNames: ['listing-title','listing-context','listing-when','listing-summary','listing-abstract','listing-report','listing-slides','listing-code',{ data: ['index'] },{ data: ['categories'] }],
       
-      searchColumns: ["listing-title","listing-context","listing-when","listing-summary","listing-abstract","listing-report","listing-slides"],
+      searchColumns: ["listing-title","listing-context","listing-when","listing-summary","listing-abstract","listing-report","listing-slides","listing-code"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -133,7 +136,7 @@ https://badge.dimensions.ai/
 <script type="text/javascript" src="//cdn.plu.mx/widget-popup.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -284,7 +287,7 @@ window.Quarto = {
   
   
   
-  <p class="pub-links"><a href="files/projects/711Project_JacobJohnson.pdf" class="pub-btn btn-red" target="_blank" rel="noopener"><i class="bi bi-file-earmark-pdf" aria-hidden="true"></i> Report</a> <a href="files/projects/711Project_Slides.html" class="pub-btn btn-red" target="_blank" rel="noopener"><i class="bi bi-file-earmark-slides" aria-hidden="true"></i> Slides</a> </p>
+  <p class="pub-links"><a href="files/projects/711Project_JacobJohnson.pdf" class="pub-btn btn-red" target="_blank" rel="noopener"><i class="bi bi-file-earmark-pdf" aria-hidden="true"></i> Report</a> <a href="https://github.com/jajohnsonstats/711Project" class="pub-btn btn-blue" target="_blank" rel="noopener"><i class="bi bi-github" aria-hidden="true"></i> Code</a> <a href="files/projects/711Project_Slides.html" class="pub-btn btn-red" target="_blank" rel="noopener"><i class="bi bi-file-earmark-slides" aria-hidden="true"></i> Slides</a> </p>
   
 
   

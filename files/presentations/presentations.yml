@@ -96,6 +96,8 @@
       type: contributed
       url: https://ww2.amstat.org/meetings/jsm/2025/
   slides: files/presentations/LaplaceBTM/Laplace_slides.pdf
+  preprint: https://arxiv.org/abs/2611.23467
+  code: https://zenodo.org/records/24203962
 
 
 # ---------------------------------------------------------------------
